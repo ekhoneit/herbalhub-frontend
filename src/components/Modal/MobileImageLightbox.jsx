@@ -146,7 +146,7 @@ export default function MobileImageLightbox({
                             key={idx}
                             onClick={() => onIndexChange(idx)}
                             className={`relative w-12 h-12 rounded border overflow-hidden shrink-0 cursor-pointer ${
-                                currentIndex === idx ? 'border-[#F45116] scale-105' : 'border-white/20 opacity-60'
+                                currentIndex === idx ? 'border-[#0c7c40] scale-105' : 'border-white/20 opacity-60'
                             }`}
                         >
                             <Image src={img} alt="thumbnail" fill className="object-cover" />

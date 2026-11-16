@@ -349,7 +349,7 @@ export default function OrderDetailsDrawer({ isOpen, onClose, order: initialOrde
             {/* Drawer Header */}
             <div className="flex items-center justify-between px-5 sm:px-6 py-4 border-b border-gray-150 bg-white flex-shrink-0 no-print">
               <div className="flex items-center gap-3 min-w-0">
-                <div className="w-10 h-10 rounded-full bg-[#F45116]/10 flex items-center justify-center text-[#F45116] flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#0c7c40]/10 flex items-center justify-center text-[#0c7c40] flex-shrink-0">
                   <Package className="w-5 h-5" />
                 </div>
                 <div className="min-w-0">
@@ -377,7 +377,7 @@ export default function OrderDetailsDrawer({ isOpen, onClose, order: initialOrde
                       onClick={handleDownloadPDF}
                       disabled={downloadingPDF}
                       title="Download PDF Invoice"
-                      className="p-2 sm:px-3 sm:py-1.5 bg-[#F45116]/10 hover:bg-[#F45116] text-[#F45116] hover:text-white rounded-[6px] transition-all cursor-pointer flex items-center gap-1.5 text-xs font-semibold disabled:opacity-50"
+                      className="p-2 sm:px-3 sm:py-1.5 bg-[#0c7c40]/10 hover:bg-[#0c7c40] text-[#0c7c40] hover:text-white rounded-[6px] transition-all cursor-pointer flex items-center gap-1.5 text-xs font-semibold disabled:opacity-50"
                     >
                       {downloadingPDF ? (
                         <Loader2 className="w-4 h-4 animate-spin" />
@@ -392,7 +392,7 @@ export default function OrderDetailsDrawer({ isOpen, onClose, order: initialOrde
                     <button
                       onClick={handlePrint}
                       title="Print invoice"
-                      className="p-2 text-gray-600 hover:text-[#F45116] hover:bg-gray-100 rounded-[6px] transition-colors cursor-pointer flex items-center gap-1.5 text-xs font-semibold"
+                      className="p-2 text-gray-600 hover:text-[#0c7c40] hover:bg-gray-100 rounded-[6px] transition-colors cursor-pointer flex items-center gap-1.5 text-xs font-semibold"
                     >
                       <Printer className="w-4 h-4" />
                       <span className="hidden sm:inline">Print</span>
@@ -427,7 +427,7 @@ export default function OrderDetailsDrawer({ isOpen, onClose, order: initialOrde
                   <p className="text-xs text-red-700 mb-4">{error}</p>
                   <button
                     onClick={() => orderId && fetchOrder(orderId)}
-                    className="px-4 py-2 bg-[#F45116] text-white rounded-[6px] text-xs font-semibold uppercase tracking-wider hover:bg-[#D9400B] transition-colors cursor-pointer"
+                    className="px-4 py-2 bg-[#0c7c40] text-white rounded-[6px] text-xs font-semibold uppercase tracking-wider hover:bg-[#096333] transition-colors cursor-pointer"
                   >
                     Retry
                   </button>
@@ -455,13 +455,13 @@ export default function OrderDetailsDrawer({ isOpen, onClose, order: initialOrde
                   )}
 
                   {/* Return Notice */}
-                  <div className="bg-[#F45116]/5 border border-[#F45116]/10 rounded-[12px] p-3.5 text-xs text-gray-700 flex items-start gap-2.5 no-print">
-                    <AlertCircle className="w-4 h-4 text-[#F45116] mt-0.5 flex-shrink-0" />
+                  <div className="bg-[#0c7c40]/5 border border-[#0c7c40]/10 rounded-[12px] p-3.5 text-xs text-gray-700 flex items-start gap-2.5 no-print">
+                    <AlertCircle className="w-4 h-4 text-[#0c7c40] mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="font-bold text-gray-900">Need to Return a Product?</p>
                       <p className="mt-0.5 text-gray-600">
                         Please contact our support hotline directly at{" "}
-                        <a href={contactTel} className="font-bold underline text-[#F45116] hover:text-[#D9400B]">
+                        <a href={contactTel} className="font-bold underline text-[#0c7c40] hover:text-[#096333]">
                           {contactPhone}
                         </a>.
                       </p>
@@ -472,7 +472,7 @@ export default function OrderDetailsDrawer({ isOpen, onClose, order: initialOrde
                   <div className="bg-white rounded-[12px] border border-gray-200 overflow-hidden shadow-xs">
                     <div className="px-5 py-3.5 border-b border-gray-100 flex items-center justify-between bg-gray-50/50">
                       <div className="flex items-center gap-2">
-                        <Package className="w-4 h-4 text-[#F45116]" />
+                        <Package className="w-4 h-4 text-[#0c7c40]" />
                         <h3 className="text-sm font-bold text-gray-900">
                           Ordered Items ({totalItemCount})
                         </h3>
@@ -503,7 +503,7 @@ export default function OrderDetailsDrawer({ isOpen, onClose, order: initialOrde
                               <h4 className="font-bold text-gray-900 text-xs sm:text-sm truncate">
                                 {item.product?.productName || "Product"}
                                 {variantLabel && (
-                                  <span className="ml-1.5 text-[#F45116] font-semibold text-xs">
+                                  <span className="ml-1.5 text-[#0c7c40] font-semibold text-xs">
                                     ({variantLabel})
                                   </span>
                                 )}
@@ -513,7 +513,7 @@ export default function OrderDetailsDrawer({ isOpen, onClose, order: initialOrde
                                   SKU: {item.sku || item.productVariant?.sku || item.product?.sku || "N/A"}
                                 </p>
                                 {variantLabel && (
-                                  <span className="inline-flex items-center text-[10px] font-medium bg-[#F45116]/10 text-[#F45116] px-1.5 py-0.2 rounded">
+                                  <span className="inline-flex items-center text-[10px] font-medium bg-[#0c7c40]/10 text-[#0c7c40] px-1.5 py-0.2 rounded">
                                     {variantLabel}
                                   </span>
                                 )}
@@ -546,7 +546,7 @@ export default function OrderDetailsDrawer({ isOpen, onClose, order: initialOrde
                             <h4 className="font-bold text-gray-900 text-xs sm:text-sm truncate">
                               {bundleItem.bundle?.name || "Bundle Package"}
                             </h4>
-                            <p className="text-[11px] text-[#F45116] font-semibold mt-0.5">
+                            <p className="text-[11px] text-[#0c7c40] font-semibold mt-0.5">
                               Bundle Package
                             </p>
                             <div className="flex items-center justify-between mt-2">
@@ -604,7 +604,7 @@ export default function OrderDetailsDrawer({ isOpen, onClose, order: initialOrde
                         </div>
                         <div className="border-t border-gray-150 pt-2 flex justify-between text-sm font-bold text-gray-900">
                           <span>Grand Total</span>
-                          <span className="text-[#F45116]">{formatPrice(order.grandTotal)}</span>
+                          <span className="text-[#0c7c40]">{formatPrice(order.grandTotal)}</span>
                         </div>
                       </div>
 
@@ -649,7 +649,7 @@ export default function OrderDetailsDrawer({ isOpen, onClose, order: initialOrde
                           </p>
                           <p className="flex items-center gap-1.5 text-gray-600">
                             <Phone className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" />
-                            <a href={`tel:${order.shippingAddress.phoneNumber}`} className="hover:text-[#F45116] font-medium">
+                            <a href={`tel:${order.shippingAddress.phoneNumber}`} className="hover:text-[#0c7c40] font-medium">
                               {order.shippingAddress.phoneNumber}
                             </a>
                           </p>
@@ -684,7 +684,7 @@ export default function OrderDetailsDrawer({ isOpen, onClose, order: initialOrde
                     type="button"
                     onClick={handleDownloadPDF}
                     disabled={downloadingPDF}
-                    className="flex items-center gap-1.5 px-5 py-2.5 bg-[#F45116] hover:bg-[#D9400B] text-white rounded-[6px] text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer disabled:opacity-50"
+                    className="flex items-center gap-1.5 px-5 py-2.5 bg-[#0c7c40] hover:bg-[#096333] text-white rounded-[6px] text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer disabled:opacity-50"
                   >
                     {downloadingPDF ? (
                       <Loader2 className="w-4 h-4 animate-spin" />

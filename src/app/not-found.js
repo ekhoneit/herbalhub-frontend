@@ -59,13 +59,13 @@ export default async function NotFound() {
                     <div className="relative inline-block">
                         <div className="relative flex items-center justify-center">
                             {/* Big Stylized Gradient 404 Numbers */}
-                            <span className="text-8xl sm:text-9xl md:text-[11rem] font-black tracking-tighter bg-gradient-to-r from-primary via-[#D9400B] to-[#102D50] bg-clip-text text-transparent select-none leading-none drop-shadow-sm font-sans">
+                            <span className="text-8xl sm:text-9xl md:text-[11rem] font-black tracking-tighter bg-gradient-to-r from-primary via-[#096333] to-[#102D50] bg-clip-text text-transparent select-none leading-none drop-shadow-sm font-sans">
                                 404
                             </span>
 
                             {/* Floating Cute Compass/Package Badge in the middle */}
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl p-3 sm:p-4 shadow-xl border border-orange-100/80 animate-bounce duration-1000">
-                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-primary to-[#D9400B] text-white flex items-center justify-center shadow-md">
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-primary to-[#096333] text-white flex items-center justify-center shadow-md">
                                     <Compass size={24} className="animate-spin duration-3000" />
                                 </div>
                             </div>

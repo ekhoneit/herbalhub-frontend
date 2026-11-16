@@ -43,7 +43,7 @@ export default function ProductImageGallery({ images = [], productName = "" }) {
               onClick={() => setSelectedImage(index)}
               className={`relative shrink-0 w-16 md:w-20 h-16 md:h-20 border rounded-xl overflow-hidden transition-all cursor-pointer ${
                 selectedImage === index
-                  ? "border-[#F45116] shadow-md ring-2 ring-[#F45116]/30"
+                  ? "border-[#0c7c40] shadow-md ring-2 ring-[#0c7c40]/30"
                   : "border-gray-200 hover:border-gray-400"
               }`}
             >

@@ -118,7 +118,7 @@ const MyAccount = () => {
     <div className="w-full bg-white rounded-[12px] shadow-[0_4px_20px_rgba(0,0,0,0.05)] p-6 text-gray-800 font-outfit border border-gray-100">
       {/* Breadcrumbs */}
       <div className="flex items-center gap-2 text-sm text-gray-600 mb-6">
-        <Link href="/" className="hover:text-[#F45116] flex items-center gap-1 transition-colors duration-200">
+        <Link href="/" className="hover:text-[#0c7c40] flex items-center gap-1 transition-colors duration-200">
           <Home className="w-4 h-4" />
           Home
         </Link>
@@ -209,7 +209,7 @@ const MyAccount = () => {
         <div className="space-y-6">
           <div>
             <h2 className="text-xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-50 flex items-center gap-2">
-              <Lock className="w-5 h-5 text-[#F45116]" />
+              <Lock className="w-5 h-5 text-[#0c7c40]" />
               Change My Password
             </h2>
 
@@ -222,7 +222,7 @@ const MyAccount = () => {
                   type="password"
                   value={currentPassword}
                   onChange={(e) => setCurrentPassword(e.target.value)}
-                  className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-200 rounded-[6px] text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#F45116] focus:border-[#F45116] transition-colors"
+                  className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-200 rounded-[6px] text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#0c7c40] focus:border-[#0c7c40] transition-colors"
                   placeholder="Enter current password"
                   required
                   disabled={isUpdating}
@@ -237,7 +237,7 @@ const MyAccount = () => {
                   type="password"
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
-                  className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-200 rounded-[6px] text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#F45116] focus:border-[#F45116] transition-colors"
+                  className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-200 rounded-[6px] text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#0c7c40] focus:border-[#0c7c40] transition-colors"
                   placeholder="Enter new password (min 6 chars)"
                   required
                   minLength={6}
@@ -253,7 +253,7 @@ const MyAccount = () => {
                   type="password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-200 rounded-[6px] text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#F45116] focus:border-[#F45116] transition-colors"
+                  className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-200 rounded-[6px] text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#0c7c40] focus:border-[#0c7c40] transition-colors"
                   placeholder="Confirm new password"
                   required
                   minLength={6}
@@ -275,7 +275,7 @@ const MyAccount = () => {
               <button
                 type="submit"
                 disabled={isUpdating}
-                className="w-full py-3 bg-[#F45116] text-white font-semibold rounded-[6px] hover:bg-[#D9400B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F45116] transition duration-150 ease-in-out uppercase text-sm tracking-wide shadow-sm cursor-pointer disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed"
+                className="w-full py-3 bg-[#0c7c40] text-white font-semibold rounded-[6px] hover:bg-[#096333] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0c7c40] transition duration-150 ease-in-out uppercase text-sm tracking-wide shadow-sm cursor-pointer disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed"
               >
                 {isUpdating ? "Updating..." : "Change Password"}
               </button>

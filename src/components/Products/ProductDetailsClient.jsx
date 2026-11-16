@@ -286,13 +286,13 @@ export default function ProductDetailsClient({
       <Container>
         {/* Breadcrumb Navigation */}
         <nav className="text-xs md:text-sm text-gray-500 mb-5 flex items-center gap-1.5 md:gap-2 flex-wrap">
-          <Link href="/" className="hover:text-[#F45116] transition-colors">
+          <Link href="/" className="hover:text-[#0c7c40] transition-colors">
             Home
           </Link>
           <span>/</span>
           <Link
             href="/product"
-            className="hover:text-[#F45116] transition-colors"
+            className="hover:text-[#0c7c40] transition-colors"
           >
             Products
           </Link>
@@ -406,7 +406,7 @@ export default function ProductDetailsClient({
 
             {/* Price & Stock Badge Section */}
             <div className="py-3 border-y border-gray-100 flex items-center gap-3 md:gap-4 flex-wrap">
-              <span className="text-2xl md:text-3xl font-black text-[#F45116]">
+              <span className="text-2xl md:text-3xl font-black text-[#0c7c40]">
                 ৳{formatPrice(discountedPrice)}
               </span>
 
@@ -518,7 +518,7 @@ export default function ProductDetailsClient({
                       ? "bg-green-50 text-green-600 border-green-500 hover:bg-green-100"
                       : isPreOrder
                         ? "bg-amber-50 text-amber-800 border-amber-400 hover:bg-amber-100"
-                        : "bg-white text-[#F45116] border-[#F45116] hover:bg-[#F45116]/5"
+                        : "bg-white text-[#0c7c40] border-[#0c7c40] hover:bg-[#0c7c40]/5"
                   } ${!canAddToCart ? "opacity-50 cursor-not-allowed" : "cursor-pointer shadow-xs active:scale-98"}`}
                 >
                   {isInCart ? (
@@ -544,7 +544,7 @@ export default function ProductDetailsClient({
                   className={`py-3.5 px-4 rounded-xl font-bold text-white transition-all text-xs sm:text-sm flex items-center justify-center gap-2 ${
                     isPreOrder
                       ? "bg-amber-600 hover:bg-amber-700 shadow-md shadow-amber-600/20"
-                      : "bg-[#F45116] hover:bg-[#D9400B] shadow-md shadow-[#F45116]/20"
+                      : "bg-[#0c7c40] hover:bg-[#096333] shadow-md shadow-[#0c7c40]/20"
                   } active:scale-98 ${
                     !canAddToCart || buyNowLoading
                       ? "opacity-50 cursor-not-allowed"
@@ -585,7 +585,7 @@ export default function ProductDetailsClient({
             {/* Quick Benefits Guarantee Banner */}
             <div className="grid grid-cols-3 gap-2 pt-4 border-t border-gray-100 text-center">
               <div className="p-2.5 rounded-xl bg-gray-50 border border-gray-100">
-                <Truck className="w-4 h-4 mx-auto mb-1 text-[#F45116]" />
+                <Truck className="w-4 h-4 mx-auto mb-1 text-[#0c7c40]" />
                 <p className="text-[11px] font-bold text-gray-800">
                   Fast Delivery
                 </p>

@@ -59,7 +59,7 @@ export default function VariantSelector({ product, onVariantChange, className = 
                         <div className="flex items-center justify-between">
                             <span className="text-xs md:text-sm font-semibold text-gray-800 capitalize">
                                 {option.attributeName}:{' '}
-                                <span className="text-[#F45116] font-bold">
+                                <span className="text-[#0c7c40] font-bold">
                                     {isHexColor(selectedValue) ? getColorName(selectedValue) : selectedValue || 'Choose'}
                                 </span>
                             </span>
@@ -78,7 +78,7 @@ export default function VariantSelector({ product, onVariantChange, className = 
                                             onClick={() => handleAttributeSelect(option.attributeName, value)}
                                             className={`group relative flex items-center gap-2 p-1.5 md:p-2 rounded-xl border text-xs md:text-sm transition-all cursor-pointer ${
                                                 isSelected
-                                                    ? 'border-[#F45116] bg-[#F45116]/10 shadow-xs'
+                                                    ? 'border-[#0c7c40] bg-[#0c7c40]/10 shadow-xs'
                                                     : 'border-gray-200 bg-white hover:border-gray-400'
                                             }`}
                                             title={getColorName(value)}
@@ -101,7 +101,7 @@ export default function VariantSelector({ product, onVariantChange, className = 
                                         onClick={() => handleAttributeSelect(option.attributeName, value)}
                                         className={`px-3.5 py-1.5 md:px-4 md:py-2 rounded-xl border text-xs md:text-sm font-medium transition-all cursor-pointer ${
                                             isSelected
-                                                ? 'border-[#F45116] bg-[#F45116] text-white shadow-xs font-semibold'
+                                                ? 'border-[#0c7c40] bg-[#0c7c40] text-white shadow-xs font-semibold'
                                                 : 'border-gray-200 bg-white text-gray-700 hover:border-gray-400'
                                         }`}
                                     >

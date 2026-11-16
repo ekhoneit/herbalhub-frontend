@@ -117,7 +117,7 @@ const SignUp = () => {
                         icon: 'success',
                         title: 'Success!',
                         text: 'Account created! Please check email for verification code.',
-                        confirmButtonColor: '#F45116',
+                        confirmButtonColor: '#0c7c40',
                         showConfirmButton: true
                     });
 
@@ -135,7 +135,7 @@ const SignUp = () => {
                                 <p class="text-sm mt-2">Please verify your email first, then contact support to complete your profile.</p>
                             </div>
                         `,
-                        confirmButtonColor: '#F45116'
+                        confirmButtonColor: '#0c7c40'
                     });
 
                     // Still allow verification
@@ -156,9 +156,9 @@ const SignUp = () => {
                 icon: 'error',
                 title: 'Oops...',
                 text: errorMessage,
-                confirmButtonColor: '#F45116',
+                confirmButtonColor: '#0c7c40',
                 footer: errorMessage.includes('already registered')
-                    ? '<a href="/login" style="color: #F45116; font-weight: 600;">Go to Login</a>'
+                    ? '<a href="/login" style="color: #0c7c40; font-weight: 600;">Go to Login</a>'
                     : ''
             });
         } finally {
@@ -297,7 +297,7 @@ const SignUp = () => {
                             <button
                                 type="submit"
                                 disabled={isLoading}
-                                className="w-full flex justify-center py-2.5 px-4 border border-transparent text-sm font-semibold rounded-[6px] text-white bg-primary hover:bg-[#D9400B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-150 ease-in-out uppercase cursor-pointer disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed shadow-sm"
+                                className="w-full flex justify-center py-2.5 px-4 border border-transparent text-sm font-semibold rounded-[6px] text-white bg-primary hover:bg-[#096333] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-150 ease-in-out uppercase cursor-pointer disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed shadow-sm"
                             >
                                 {isLoading ? 'Creating Account...' : 'Sign Up'}
                             </button>

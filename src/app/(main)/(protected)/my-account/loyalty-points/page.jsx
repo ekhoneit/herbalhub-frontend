@@ -207,7 +207,7 @@ export default function LoyaltyPointsPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <Loader2 className="w-10 h-10 animate-spin text-[#F45116]" />
+        <Loader2 className="w-10 h-10 animate-spin text-[#0c7c40]" />
       </div>
     );
   }

@@ -226,7 +226,7 @@ const AddressBookPage = () => {
             icon: "success",
             title: "Deleted Successfully",
             text: "Address has been removed",
-            confirmButtonColor: "#F45116",
+            confirmButtonColor: "#0c7c40",
             timer: 2000,
             showConfirmButton: false
           });
@@ -239,7 +239,7 @@ const AddressBookPage = () => {
           icon: "error",
           title: "Error",
           text: error?.message || "Failed to delete address",
-          confirmButtonColor: "#F45116"
+          confirmButtonColor: "#0c7c40"
         });
       }
     }
@@ -270,7 +270,7 @@ const AddressBookPage = () => {
         Swal.fire({
           icon: "success",
           title: "Default Address Updated",
-          confirmButtonColor: "#F45116",
+          confirmButtonColor: "#0c7c40",
           timer: 1500,
           showConfirmButton: false
         });
@@ -284,7 +284,7 @@ const AddressBookPage = () => {
         icon: "error",
         title: "Error",
         text: error?.message || "Failed to set default address",
-        confirmButtonColor: "#F45116"
+        confirmButtonColor: "#0c7c40"
       });
     }
   };
@@ -309,9 +309,9 @@ const AddressBookPage = () => {
     switch (type) {
       case "Home":
         return {
-          bg: "bg-[#F45116]/5",
-          text: "text-[#F45116]",
-          border: "border-[#F45116]/20",
+          bg: "bg-[#0c7c40]/5",
+          text: "text-[#0c7c40]",
+          border: "border-[#0c7c40]/20",
         };
       case "Office":
         return {
@@ -337,12 +337,12 @@ const AddressBookPage = () => {
       <div className="space-y-6">
         {/* Breadcrumbs */}
         <div className="flex items-center gap-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-[#F45116] flex items-center gap-1 transition-colors duration-200">
+          <Link href="/" className="hover:text-[#0c7c40] flex items-center gap-1 transition-colors duration-200">
             <HomeIcon className="w-4 h-4" />
             Home
           </Link>
           <ChevronRight className="w-4 h-4 text-gray-400" />
-          <Link href="/my-account" className="hover:text-[#F45116] transition-colors duration-200">
+          <Link href="/my-account" className="hover:text-[#0c7c40] transition-colors duration-200">
             My Account
           </Link>
           <ChevronRight className="w-4 h-4 text-gray-400" />
@@ -350,7 +350,7 @@ const AddressBookPage = () => {
         </div>
 
         {/* Header Section */}
-        <div className="bg-[#F45116]/5 p-4 rounded-[12px] border border-[#F45116]/10">
+        <div className="bg-[#0c7c40]/5 p-4 rounded-[12px] border border-[#0c7c40]/10">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="space-y-1">
               <h1 className="text-xl font-bold text-gray-900">
@@ -363,7 +363,7 @@ const AddressBookPage = () => {
 
             <button
               onClick={() => setShowAddDrawer(true)}
-              className="group flex items-center justify-center gap-2.5 px-4 py-2.5 bg-[#F45116] hover:bg-[#D9400B] text-white rounded-[6px] transition-all duration-300 font-semibold text-sm cursor-pointer shadow-sm w-full md:w-auto"
+              className="group flex items-center justify-center gap-2.5 px-4 py-2.5 bg-[#0c7c40] hover:bg-[#096333] text-white rounded-[6px] transition-all duration-300 font-semibold text-sm cursor-pointer shadow-sm w-full md:w-auto"
             >
               <Plus className="w-4 h-4" />
               <span>Add New Address</span>
@@ -376,8 +376,8 @@ const AddressBookPage = () => {
           {addresses.length === 0 ? (
             /* Empty State */
             <div className="flex flex-col items-center justify-center py-16 px-4">
-              <div className="w-20 h-20 bg-[#F45116]/5 rounded-[24px] flex items-center justify-center mb-6">
-                <MapPin className="w-10 h-10 text-[#F45116]" />
+              <div className="w-20 h-20 bg-[#0c7c40]/5 rounded-[24px] flex items-center justify-center mb-6">
+                <MapPin className="w-10 h-10 text-[#0c7c40]" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">
                 No Addresses Yet
@@ -387,7 +387,7 @@ const AddressBookPage = () => {
               </p>
               <button
                 onClick={() => setShowAddDrawer(true)}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#F45116] hover:bg-[#D9400B] text-white rounded-[6px] shadow-sm font-bold text-sm cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0c7c40] hover:bg-[#096333] text-white rounded-[6px] shadow-sm font-bold text-sm cursor-pointer"
               >
                 <Plus className="w-4 h-4" />
                 Add Your First Address
@@ -404,13 +404,13 @@ const AddressBookPage = () => {
                     key={item.id}
                     className={`relative bg-white rounded-[12px] border transition-all duration-200 hover:shadow-md ${
                       item.isDefault
-                        ? "border-[#F45116] shadow-sm"
-                        : "border-gray-200 hover:border-[#F45116]/40"
+                        ? "border-[#0c7c40] shadow-sm"
+                        : "border-gray-200 hover:border-[#0c7c40]/40"
                     }`}
                   >
                     {/* Default Badge */}
                     {item.isDefault && (
-                      <div className="absolute -top-3 left-6 px-3 py-1 bg-[#F45116] text-white text-[10px] font-bold rounded-full shadow-sm flex items-center gap-1">
+                      <div className="absolute -top-3 left-6 px-3 py-1 bg-[#0c7c40] text-white text-[10px] font-bold rounded-full shadow-sm flex items-center gap-1">
                         <Star className="w-3 h-3 fill-current" />
                         DEFAULT ADDRESS
                       </div>
@@ -443,7 +443,7 @@ const AddressBookPage = () => {
                         <div className="flex gap-1.5">
                           <button
                             onClick={() => openEditDrawer(item)}
-                            className="p-2 text-stone-600 hover:text-[#F45116] hover:bg-[#F45116]/5 rounded-[6px] transition-colors border border-gray-100 cursor-pointer"
+                            className="p-2 text-stone-600 hover:text-[#0c7c40] hover:bg-[#0c7c40]/5 rounded-[6px] transition-colors border border-gray-100 cursor-pointer"
                             title="Edit Address"
                           >
                             <Edit className="w-4 h-4" />
@@ -491,7 +491,7 @@ const AddressBookPage = () => {
                             {item.city && (
                               <p className="text-xs text-gray-400">City: {item.city}</p>
                             )}
-                            <p className="text-xs font-bold text-[#F45116] pt-0.5">
+                            <p className="text-xs font-bold text-[#0c7c40] pt-0.5">
                               {item.country}
                             </p>
                           </div>
@@ -504,7 +504,7 @@ const AddressBookPage = () => {
                           <div className="border-t border-gray-100"></div>
                           <button
                             onClick={() => handleSetDefault(item.id)}
-                            className="w-full flex items-center justify-center gap-1.5 px-4 py-2 bg-gray-50 hover:bg-[#F45116]/5 text-gray-700 hover:text-[#F45116] rounded-[6px] border border-gray-200 hover:border-[#F45116]/20 transition-all duration-200 text-xs font-bold cursor-pointer"
+                            className="w-full flex items-center justify-center gap-1.5 px-4 py-2 bg-gray-50 hover:bg-[#0c7c40]/5 text-gray-700 hover:text-[#0c7c40] rounded-[6px] border border-gray-200 hover:border-[#0c7c40]/20 transition-all duration-200 text-xs font-bold cursor-pointer"
                           >
                             <Check className="w-3.5 h-3.5" />
                             Set as Default

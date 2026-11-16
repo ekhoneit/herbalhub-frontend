@@ -13,9 +13,9 @@ const EmptyWishlist = () => (
         <div className="min-h-[50vh] flex flex-col items-center justify-center text-center px-4">
             <div className="relative mb-6">
                 <div className="w-24 h-24 rounded-full bg-orange-50 flex items-center justify-center">
-                    <Heart size={48} className="text-[#F45116]/40" />
+                    <Heart size={48} className="text-[#0c7c40]/40" />
                 </div>
-                <div className="absolute -top-1 -right-1 bg-[#F45116] rounded-full p-2 text-white shadow-md">
+                <div className="absolute -top-1 -right-1 bg-[#0c7c40] rounded-full p-2 text-white shadow-md">
                     <Package size={16} />
                 </div>
             </div>
@@ -27,7 +27,7 @@ const EmptyWishlist = () => (
             </p>
             <Link
                 href="/product"
-                className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#F45116] hover:bg-[#D9400B] text-white rounded-xl font-bold transition-all shadow-md active:scale-95 text-sm"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#0c7c40] hover:bg-[#096333] text-white rounded-xl font-bold transition-all shadow-md active:scale-95 text-sm"
             >
                 <ShoppingBag size={18} />
                 <span>Start Shopping</span>
@@ -42,7 +42,7 @@ export default function WishlistClient() {
     if (loading) {
         return (
             <Container className="py-16 text-center">
-                <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-[#F45116] border-t-transparent" />
+                <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-[#0c7c40] border-t-transparent" />
             </Container>
         );
     }
@@ -135,7 +135,7 @@ export default function WishlistClient() {
                                     <div className="min-w-0 flex-1">
                                         <Link
                                             href={`/product/${item.slug || item.id}`}
-                                            className="text-sm md:text-base font-bold text-gray-900 hover:text-[#F45116] transition-colors line-clamp-1 block"
+                                            className="text-sm md:text-base font-bold text-gray-900 hover:text-[#0c7c40] transition-colors line-clamp-1 block"
                                         >
                                             {item.productName}
                                         </Link>
@@ -154,7 +154,7 @@ export default function WishlistClient() {
 
                                         {/* Price with Discount */}
                                         <div className="flex items-center gap-2 mt-1.5 flex-wrap">
-                                            <span className="text-base md:text-lg font-black text-[#F45116]">
+                                            <span className="text-base md:text-lg font-black text-[#0c7c40]">
                                                 ৳{formatPrice(finalPrice)}
                                             </span>
                                             {hasDiscount && (

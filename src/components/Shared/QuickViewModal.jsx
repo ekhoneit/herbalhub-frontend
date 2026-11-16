@@ -425,7 +425,7 @@ export default function QuickViewModal({ product, isOpen, onClose }) {
                 type="button"
                 onClick={handleAddToCart}
                 disabled={!isAvailable}
-                className="flex-1 py-2.5 px-3.5 rounded-xl border border-[#F45116] text-[#F45116] bg-white hover:bg-[#F45116]/5 font-bold text-xs sm:text-sm transition-all cursor-pointer flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed shadow-xs active:scale-98"
+                className="flex-1 py-2.5 px-3.5 rounded-xl border border-[#0c7c40] text-[#0c7c40] bg-white hover:bg-[#0c7c40]/5 font-bold text-xs sm:text-sm transition-all cursor-pointer flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed shadow-xs active:scale-98"
               >
                 <ShoppingCart size={16} />
                 <span>Add to Cart</span>
@@ -434,7 +434,7 @@ export default function QuickViewModal({ product, isOpen, onClose }) {
                 type="button"
                 onClick={handleProceedCheckout}
                 disabled={!isAvailable}
-                className="flex-1 py-2.5 px-3.5 rounded-xl bg-[#F45116] hover:bg-[#D9400B] text-white font-bold text-xs sm:text-sm shadow-md shadow-[#F45116]/20 transition-all cursor-pointer flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed group active:scale-98"
+                className="flex-1 py-2.5 px-3.5 rounded-xl bg-[#0c7c40] hover:bg-[#096333] text-white font-bold text-xs sm:text-sm shadow-md shadow-[#0c7c40]/20 transition-all cursor-pointer flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed group active:scale-98"
               >
                 <span>Buy Now</span>
                 <ArrowRight

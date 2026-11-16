@@ -564,7 +564,7 @@ export default function CheckoutClient({ initialContact = null }) {
               </div>
             `,
             confirmButtonText: "ঠিক আছে, বুঝেছি",
-            confirmButtonColor: "#F45116",
+            confirmButtonColor: "#0c7c40",
             customClass: {
               popup: "rounded-3xl shadow-2xl p-6 sm:p-8 max-w-lg",
               title: "text-xl sm:text-2xl font-bold text-slate-900 pt-2",
@@ -626,7 +626,7 @@ export default function CheckoutClient({ initialContact = null }) {
         title: "Order Placed Successfully!",
         html: `<p class="text-sm text-gray-600">Your Order <b>#${orderData.orderNumber || orderData.id}</b> has been received. Our team will contact you shortly.</p>`,
         confirmButtonText: "Continue Shopping",
-        confirmButtonColor: "#F45116",
+        confirmButtonColor: "#0c7c40",
       }).then(() => {
         router.push("/");
       });
@@ -643,7 +643,7 @@ export default function CheckoutClient({ initialContact = null }) {
       <div className="bg-[#FAF7F5] text-gray-900 min-h-screen">
         <Container className="py-10">
           <div className="flex items-center justify-center min-h-[400px]">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#F45116]"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#0c7c40]"></div>
           </div>
         </Container>
       </div>
@@ -657,7 +657,7 @@ export default function CheckoutClient({ initialContact = null }) {
           <div className="flex items-center gap-2 text-gray-700 mb-6 text-sm">
             <Link
               href="/"
-              className="hover:underline hover:text-[#F45116] flex items-center gap-1 transition"
+              className="hover:underline hover:text-[#0c7c40] flex items-center gap-1 transition"
             >
               Home <IoIosArrowForward />
             </Link>
@@ -674,7 +674,7 @@ export default function CheckoutClient({ initialContact = null }) {
             </p>
             <Link
               href="/"
-              className="px-6 py-3 bg-[#F45116] text-white rounded-xl font-bold hover:bg-[#D9400B] transition-colors"
+              className="px-6 py-3 bg-[#0c7c40] text-white rounded-xl font-bold hover:bg-[#096333] transition-colors"
             >
               Start Shopping
             </Link>
@@ -691,7 +691,7 @@ export default function CheckoutClient({ initialContact = null }) {
         <div className="flex items-center gap-2 text-gray-700 text-xs md:text-sm mb-6">
           <Link
             href="/"
-            className="hover:underline hover:text-[#F45116] flex items-center gap-1 transition"
+            className="hover:underline hover:text-[#0c7c40] flex items-center gap-1 transition"
           >
             Home <IoIosArrowForward size={12} />
           </Link>
@@ -699,7 +699,7 @@ export default function CheckoutClient({ initialContact = null }) {
             <button
               type="button"
               onClick={openCartDrawer}
-              className="hover:underline hover:text-[#F45116] flex items-center gap-1 transition cursor-pointer text-gray-500"
+              className="hover:underline hover:text-[#0c7c40] flex items-center gap-1 transition cursor-pointer text-gray-500"
             >
               Cart <IoIosArrowForward size={12} />
             </button>

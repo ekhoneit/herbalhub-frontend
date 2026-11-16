@@ -19,7 +19,7 @@ export default async function CheckoutPage() {
     return (
         <Suspense fallback={
             <div className="min-h-screen flex items-center justify-center bg-[#FAF7F5]">
-                <div className="w-8 h-8 border-3 border-[#F45116] border-t-transparent rounded-full animate-spin"></div>
+                <div className="w-8 h-8 border-3 border-[#0c7c40] border-t-transparent rounded-full animate-spin"></div>
             </div>
         }>
             <CheckoutClient initialContact={contactData} />

@@ -56,7 +56,7 @@ export default function AiAssistantWidget() {
             onClick={() => {
               if (isInternalProduct) setIsOpen(false);
             }}
-            className="inline-flex items-center gap-1 font-bold text-[#F45116] underline underline-offset-2 hover:text-[#D9400B] bg-orange-50 px-1.5 py-0.5 rounded mx-1 transition-colors"
+            className="inline-flex items-center gap-1 font-bold text-[#0c7c40] underline underline-offset-2 hover:text-[#096333] bg-orange-50 px-1.5 py-0.5 rounded mx-1 transition-colors"
           >
             <span>{isInternalProduct ? "পণ্যটি দেখুন ↗" : part}</span>
             <ExternalLink size={11} className="inline shrink-0" />
@@ -224,7 +224,7 @@ export default function AiAssistantWidget() {
             onClick={() => {
               setIsOpen(true);
             }}
-            className="group relative flex items-center gap-2.5 px-4 py-3 bg-gradient-to-r from-[#F45116] via-[#FF6B35] to-[#F45116] text-white font-bold text-xs sm:text-sm rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 border-2 border-white/40 cursor-pointer"
+            className="group relative flex items-center gap-2.5 px-4 py-3 bg-gradient-to-r from-[#0c7c40] via-[#FF6B35] to-[#0c7c40] text-white font-bold text-xs sm:text-sm rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 border-2 border-white/40 cursor-pointer"
           >
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
@@ -242,7 +242,7 @@ export default function AiAssistantWidget() {
           {/* Header */}
           <div className="bg-gradient-to-r from-[#102D50] to-[#1E4675] text-white p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 text-[#F45116]">
+              <div className="w-10 h-10 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 text-[#0c7c40]">
                 <Bot size={22} className="text-white" />
               </div>
               <div>
@@ -297,14 +297,14 @@ export default function AiAssistantWidget() {
                   className={`flex gap-2.5 ${isUser ? "justify-end" : "justify-start"}`}
                 >
                   {!isUser && (
-                    <div className="w-7 h-7 rounded-xl bg-[#F45116] text-white flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold shadow-xs">
+                    <div className="w-7 h-7 rounded-xl bg-[#0c7c40] text-white flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold shadow-xs">
                       E
                     </div>
                   )}
                   <div
                     className={`max-w-[85%] rounded-2xl px-3.5 py-2.5 text-xs sm:text-[13px] leading-relaxed shadow-2xs ${
                       isUser
-                        ? "bg-[#F45116] text-white rounded-tr-none font-medium"
+                        ? "bg-[#0c7c40] text-white rounded-tr-none font-medium"
                         : "bg-white text-slate-800 border border-slate-200/80 rounded-tl-none font-normal"
                     }`}
                   >
@@ -323,13 +323,13 @@ export default function AiAssistantWidget() {
                         }}
                         className={`mt-2 text-[11px] font-medium flex items-center gap-1.5 px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
                           isSpeaking && playingIndex === i
-                            ? "bg-[#F45116]/10 text-[#F45116] border border-[#F45116]/30 font-semibold"
-                            : "bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-[#F45116]"
+                            ? "bg-[#0c7c40]/10 text-[#0c7c40] border border-[#0c7c40]/30 font-semibold"
+                            : "bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-[#0c7c40]"
                         }`}
                       >
                         {isSpeaking && playingIndex === i ? (
                           <>
-                            <VolumeX size={13} className="text-[#F45116] animate-pulse" />
+                            <VolumeX size={13} className="text-[#0c7c40] animate-pulse" />
                             <span>বন্ধ করুন</span>
                           </>
                         ) : (
@@ -352,9 +352,9 @@ export default function AiAssistantWidget() {
 
             {isLoading && (
               <div className="flex items-center gap-2 text-slate-400 text-xs pl-9">
-                <span className="w-2 h-2 rounded-full bg-[#F45116] animate-bounce" />
-                <span className="w-2 h-2 rounded-full bg-[#F45116] animate-bounce delay-100" />
-                <span className="w-2 h-2 rounded-full bg-[#F45116] animate-bounce delay-200" />
+                <span className="w-2 h-2 rounded-full bg-[#0c7c40] animate-bounce" />
+                <span className="w-2 h-2 rounded-full bg-[#0c7c40] animate-bounce delay-100" />
+                <span className="w-2 h-2 rounded-full bg-[#0c7c40] animate-bounce delay-200" />
                 <span className="text-[11px] text-slate-500 font-medium">AI চিন্তা করছে...</span>
               </div>
             )}
@@ -374,7 +374,7 @@ export default function AiAssistantWidget() {
                 key={idx}
                 type="button"
                 onClick={() => handleSendMessage(prompt)}
-                className="px-2.5 py-1 bg-white hover:bg-orange-50 border border-slate-200 hover:border-[#F45116]/40 text-slate-700 hover:text-[#F45116] text-[11px] rounded-lg transition-colors cursor-pointer font-medium shadow-2xs"
+                className="px-2.5 py-1 bg-white hover:bg-orange-50 border border-slate-200 hover:border-[#0c7c40]/40 text-slate-700 hover:text-[#0c7c40] text-[11px] rounded-lg transition-colors cursor-pointer font-medium shadow-2xs"
               >
                 {prompt}
               </button>
@@ -409,13 +409,13 @@ export default function AiAssistantWidget() {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder={isVoiceActive ? "বাংলায় কথা বলুন..." : "আপনার প্রশ্নটি বাংলায় লিখুন..."}
-              className="flex-1 bg-slate-100/90 border border-slate-200/90 rounded-xl px-3.5 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#F45116]/20 focus:border-[#F45116]"
+              className="flex-1 bg-slate-100/90 border border-slate-200/90 rounded-xl px-3.5 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0c7c40]/20 focus:border-[#0c7c40]"
             />
 
             <button
               type="submit"
               disabled={!inputValue.trim() || isLoading}
-              className="p-2.5 rounded-xl bg-[#F45116] hover:bg-[#D9400B] text-white disabled:opacity-40 transition cursor-pointer shadow-xs active:scale-95"
+              className="p-2.5 rounded-xl bg-[#0c7c40] hover:bg-[#096333] text-white disabled:opacity-40 transition cursor-pointer shadow-xs active:scale-95"
             >
               <Send size={16} />
             </button>

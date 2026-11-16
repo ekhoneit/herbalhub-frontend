@@ -24,7 +24,7 @@ export default function ProductTabs({ product, selectedVariant = null }) {
                         onClick={() => setActiveTab(tab.id)}
                         className={`text-xs md:text-sm px-5 py-3.5 font-semibold transition-all whitespace-nowrap border-b-2 cursor-pointer ${
                             activeTab === tab.id
-                                ? 'bg-white text-[#F45116] border-[#F45116]'
+                                ? 'bg-white text-[#0c7c40] border-[#0c7c40]'
                                 : 'text-gray-600 border-transparent hover:text-gray-900'
                         }`}
                     >
@@ -83,7 +83,7 @@ export default function ProductTabs({ product, selectedVariant = null }) {
                     <div className="space-y-6 text-sm text-gray-700">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="p-4 rounded-xl bg-orange-50/60 border border-orange-100 flex items-start gap-3.5">
-                                <Truck className="w-5 h-5 text-[#F45116] shrink-0 mt-0.5" />
+                                <Truck className="w-5 h-5 text-[#0c7c40] shrink-0 mt-0.5" />
                                 <div>
                                     <h4 className="font-bold text-gray-900 mb-1">Fast Nationwide Delivery</h4>
                                     <p className="text-xs text-gray-600 leading-relaxed">

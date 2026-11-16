@@ -68,7 +68,7 @@ const VerifyOtp = () => {
                 icon: 'error',
                 title: 'Invalid OTP',
                 text: 'Please enter all 6 digits',
-                confirmButtonColor: '#F45116'
+                confirmButtonColor: '#0c7c40'
             });
             return;
         }
@@ -104,7 +104,7 @@ const VerifyOtp = () => {
                 icon: 'error',
                 title: 'Verification Failed',
                 text: error.message || 'Invalid OTP. Please try again.',
-                confirmButtonColor: '#F45116'
+                confirmButtonColor: '#0c7c40'
             });
         } finally {
             setIsLoading(false);
@@ -131,7 +131,7 @@ const VerifyOtp = () => {
                 icon: 'error',
                 title: 'Failed',
                 text: error.message || 'Failed to resend code. Please try again.',
-                confirmButtonColor: '#F45116'
+                confirmButtonColor: '#0c7c40'
             });
         } finally {
             setIsLoading(false);
@@ -175,7 +175,7 @@ const VerifyOtp = () => {
                             <button
                                 type="submit"
                                 disabled={isLoading}
-                                className="w-full flex justify-center py-2.5 px-4 border border-transparent text-sm font-semibold rounded-[6px] text-white bg-primary hover:bg-[#D9400B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-150 ease-in-out uppercase cursor-pointer disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed shadow-sm"
+                                className="w-full flex justify-center py-2.5 px-4 border border-transparent text-sm font-semibold rounded-[6px] text-white bg-primary hover:bg-[#096333] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-150 ease-in-out uppercase cursor-pointer disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed shadow-sm"
                             >
                                 {isLoading ? 'Verifying...' : 'Verify Email'}
                             </button>

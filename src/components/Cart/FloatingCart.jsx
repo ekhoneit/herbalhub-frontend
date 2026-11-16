@@ -157,10 +157,10 @@ export default function FloatingCart() {
                 type="button"
                 draggable={false}
                 onClick={handleCartClick}
-                className="flex flex-col items-center w-16 md:w-20 rounded-l-2xl overflow-hidden border border-[#F45116]/40 border-r-0 shadow-[0_4px_20px_rgba(244,81,22,0.35)] hover:translate-x-[-3px] transition-transform duration-300 group/sticky-cart cursor-grab active:cursor-grabbing text-left bg-white p-0"
+                className="flex flex-col items-center w-16 md:w-20 rounded-l-2xl overflow-hidden border border-[#0c7c40]/40 border-r-0 shadow-[0_4px_20px_rgba(244,81,22,0.35)] hover:translate-x-[-3px] transition-transform duration-300 group/sticky-cart cursor-grab active:cursor-grabbing text-left bg-white p-0"
             >
                 {/* Top Section: Orange Background (Header + Counter) */}
-                <div className="w-full bg-[#F45116] group-hover/sticky-cart:bg-[#D9400B] text-white transition-colors flex flex-col items-center pt-2 pb-2.5 px-1.5 pointer-events-none">
+                <div className="w-full bg-[#0c7c40] group-hover/sticky-cart:bg-[#096333] text-white transition-colors flex flex-col items-center pt-2 pb-2.5 px-1.5 pointer-events-none">
                     {/* Drag Handle Indicator */}
                     <div className="flex gap-1 mb-1 opacity-70 group-hover/sticky-cart:opacity-100 transition-opacity">
                         <span className="w-1 h-1 bg-white rounded-full" />
@@ -176,7 +176,7 @@ export default function FloatingCart() {
 
                 {/* Bottom Section: Pure White (Price only, seamlessly clipped by parent button's rounded-l-2xl) */}
                 <div className="w-full bg-white text-gray-900 py-1.5 md:py-2 px-1 flex items-center justify-center pointer-events-none border-t border-orange-100/80">
-                    <span className="text-[11px] md:text-[13px] font-black text-[#F45116] truncate text-center">
+                    <span className="text-[11px] md:text-[13px] font-black text-[#0c7c40] truncate text-center">
                         ৳{formatPrice(cartTotal)}
                     </span>
                 </div>

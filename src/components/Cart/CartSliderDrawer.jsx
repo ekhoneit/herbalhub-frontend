@@ -101,7 +101,7 @@ export default function CartSliderDrawer({ isOpen, onClose }) {
             {/* Header */}
             <div className="p-4 sm:p-5 border-b border-gray-100 flex items-center justify-between bg-white shrink-0">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center text-[#F45116]">
+                <div className="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center text-[#0c7c40]">
                   <ShoppingBag size={19} />
                 </div>
                 <div>
@@ -151,7 +151,7 @@ export default function CartSliderDrawer({ isOpen, onClose }) {
                       onClose();
                       router.push("/product");
                     }}
-                    className="px-6 py-3 bg-[#F45116] hover:bg-[#D9400B] text-white rounded-xl text-xs font-bold transition-all shadow-md active:scale-95 cursor-pointer"
+                    className="px-6 py-3 bg-[#0c7c40] hover:bg-[#096333] text-white rounded-xl text-xs font-bold transition-all shadow-md active:scale-95 cursor-pointer"
                   >
                     Continue Shopping
                   </button>
@@ -213,7 +213,7 @@ export default function CartSliderDrawer({ isOpen, onClose }) {
 
                         {/* Price with Original Price & Discount Tag */}
                         <div className="flex items-baseline gap-2 mt-1 flex-wrap">
-                          <span className="font-extrabold text-sm sm:text-base text-[#F45116]">
+                          <span className="font-extrabold text-sm sm:text-base text-[#0c7c40]">
                             ৳{formatPrice(price * quantity)}
                           </span>
 
@@ -296,7 +296,7 @@ export default function CartSliderDrawer({ isOpen, onClose }) {
                 <div className="pt-1">
                   <button
                     onClick={handleCheckout}
-                    className="w-full py-3.5 px-4 rounded-xl bg-[#F45116] hover:bg-[#D9400B] text-white text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-md shadow-[#F45116]/25 active:scale-98 cursor-pointer"
+                    className="w-full py-3.5 px-4 rounded-xl bg-[#0c7c40] hover:bg-[#096333] text-white text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-md shadow-[#0c7c40]/25 active:scale-98 cursor-pointer"
                   >
                     <span>Proceed to Checkout</span>
                     <ArrowRight size={16} />

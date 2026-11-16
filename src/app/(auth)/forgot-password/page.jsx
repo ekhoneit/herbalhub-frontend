@@ -26,7 +26,7 @@ const ForgotPassword = () => {
                     icon: 'success',
                     title: 'Email Sent!',
                     text: 'Password reset code has been sent to your email.',
-                    confirmButtonColor: '#F45116'
+                    confirmButtonColor: '#0c7c40'
                 });
 
                 router.push('/verify-otp');
@@ -36,7 +36,7 @@ const ForgotPassword = () => {
                 icon: 'error',
                 title: 'Failed',
                 text: error.message || 'Failed to send reset code. Please try again.',
-                confirmButtonColor: '#F45116'
+                confirmButtonColor: '#0c7c40'
             });
         } finally {
             setIsLoading(false);
@@ -85,7 +85,7 @@ const ForgotPassword = () => {
                             <button
                                 type="submit"
                                 disabled={isLoading}
-                                className="w-full flex justify-center py-2.5 px-4 border border-transparent text-sm font-semibold rounded-[6px] text-white bg-primary hover:bg-[#D9400B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-150 ease-in-out uppercase cursor-pointer disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed shadow-sm"
+                                className="w-full flex justify-center py-2.5 px-4 border border-transparent text-sm font-semibold rounded-[6px] text-white bg-primary hover:bg-[#096333] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-150 ease-in-out uppercase cursor-pointer disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed shadow-sm"
                             >
                                 {isLoading ? 'Sending...' : 'Send Reset Code'}
                             </button>

@@ -38,7 +38,7 @@ export const getInvoiceNumber = (data) => {
 class ClientPDFGenerator {
     constructor() {
         // Brand colours
-        this.brand = [244, 81, 22]; // #F45116 (Herbalhub Primary)     
+        this.brand = [12, 124, 64]; // #0c7c40 (Herbalhub Primary)     
         this.tableHead = [61, 61, 61];  
         this.summHead = [74, 74, 74];    // #4A4A4A - dark gray
         this.primary = [26, 26, 26];     // #1A1A1A

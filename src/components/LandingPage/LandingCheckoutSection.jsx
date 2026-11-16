@@ -573,7 +573,7 @@ export default function LandingCheckoutSection({
                         </div>
                     `,
           confirmButtonText: "ঠিক আছে, বুঝেছি",
-          confirmButtonColor: "#F45116",
+          confirmButtonColor: "#0c7c40",
           customClass: {
             popup: "rounded-3xl shadow-2xl p-6 sm:p-8 max-w-lg",
             title: "text-xl sm:text-2xl font-bold text-slate-900 pt-2",

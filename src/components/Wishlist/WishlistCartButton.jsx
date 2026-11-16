@@ -90,7 +90,7 @@ export default function WishlistCartButton({ product, onMoveComplete }) {
             className={`inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-white transition-all shadow-xs cursor-pointer ${
                 product.status === false
                     ? 'bg-gray-300 cursor-not-allowed opacity-60'
-                    : 'bg-[#F45116] hover:bg-[#D9400B] active:scale-95'
+                    : 'bg-[#0c7c40] hover:bg-[#096333] active:scale-95'
             }`}
         >
             <ShoppingCart size={14} />

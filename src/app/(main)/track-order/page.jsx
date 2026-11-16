@@ -314,7 +314,7 @@ function TrackOrderContent() {
             Pending: 'bg-amber-50 text-amber-800 border border-amber-200',
             Confirmed: 'bg-blue-50 text-blue-800 border border-blue-200',
             Processing: 'bg-purple-50 text-purple-800 border border-purple-200',
-            Shipped: 'bg-[#F45116] text-white',
+            Shipped: 'bg-[#0c7c40] text-white',
             Delivered: 'bg-emerald-50 text-emerald-700 border border-emerald-200',
             Cancelled: 'bg-red-50 text-red-600 border border-red-200',
         };
@@ -342,7 +342,7 @@ function TrackOrderContent() {
             {/* ==================== SEARCH STATE ==================== */}
             {!order && (
                 <div className="animate-fadeIn min-h-[50vh] flex flex-col items-center justify-center text-center px-4">
-                    <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#F45116] mb-3">Order Status</p>
+                    <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#0c7c40] mb-3">Order Status</p>
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-3 leading-tight">
                         Track your order
                     </h1>
@@ -359,7 +359,7 @@ function TrackOrderContent() {
                     )}
 
                     {/* Input Form */}
-                    <form onSubmit={handleTrackOrder} className="w-full max-w-xl flex flex-col sm:flex-row shadow-sm border border-gray-200 rounded-xl overflow-hidden bg-white focus-within:shadow-md focus-within:border-[#F45116] transition-all">
+                    <form onSubmit={handleTrackOrder} className="w-full max-w-xl flex flex-col sm:flex-row shadow-sm border border-gray-200 rounded-xl overflow-hidden bg-white focus-within:shadow-md focus-within:border-[#0c7c40] transition-all">
                         <div className="relative flex-1">
                             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                             <input
@@ -374,7 +374,7 @@ function TrackOrderContent() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="h-12 sm:h-14 px-7 bg-[#F45116] hover:bg-[#D9400B] text-white font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2 text-xs sm:text-sm uppercase tracking-wider whitespace-nowrap group"
+                            className="h-12 sm:h-14 px-7 bg-[#0c7c40] hover:bg-[#096333] text-white font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2 text-xs sm:text-sm uppercase tracking-wider whitespace-nowrap group"
                         >
                             {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <>Track Order <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /></>}
                         </button>
@@ -394,7 +394,7 @@ function TrackOrderContent() {
                         <div>
                             <h2 className="text-xl md:text-2xl font-bold text-gray-900 tracking-tight">Order Details</h2>
                             <div className="flex items-center gap-3 mt-1.5">
-                                <button onClick={() => handleCopy(order.orderNumber)} className="flex items-center gap-1.5 text-xs sm:text-sm text-gray-600 hover:text-[#F45116] transition-colors cursor-pointer font-mono font-medium">
+                                <button onClick={() => handleCopy(order.orderNumber)} className="flex items-center gap-1.5 text-xs sm:text-sm text-gray-600 hover:text-[#0c7c40] transition-colors cursor-pointer font-mono font-medium">
                                     {order.orderNumber}
                                     {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5 text-gray-400" />}
                                 </button>
@@ -408,7 +408,7 @@ function TrackOrderContent() {
                             <StatusBadge status={order.status} />
                             <button
                                 onClick={() => { setOrder(null); setOrderNumber(''); setError(''); }}
-                                className="text-xs font-bold text-[#F45116] hover:underline transition-colors cursor-pointer"
+                                className="text-xs font-bold text-[#0c7c40] hover:underline transition-colors cursor-pointer"
                             >
                                 New Search
                             </button>
@@ -422,7 +422,7 @@ function TrackOrderContent() {
                             <h3 className="text-xl font-bold text-gray-900 mb-2">Order Cancelled</h3>
                             <p className="text-gray-600 text-sm max-w-md mx-auto mb-6">This order was cancelled. If you need assistance, please contact customer support.</p>
                             <div className="flex justify-center gap-3">
-                                <Link href="/find-store" className="px-5 py-2.5 bg-[#F45116] text-white text-xs font-bold uppercase rounded-lg hover:bg-[#D9400B] transition-colors">
+                                <Link href="/find-store" className="px-5 py-2.5 bg-[#0c7c40] text-white text-xs font-bold uppercase rounded-lg hover:bg-[#096333] transition-colors">
                                     Contact Support
                                 </Link>
                             </div>
@@ -436,7 +436,7 @@ function TrackOrderContent() {
                                 <div className="hidden md:block mb-12">
                                     <div className="relative flex items-center justify-between">
                                         <div className="absolute top-4 left-[8%] right-[8%] h-0.5 bg-gray-200" />
-                                        <div className="absolute top-4 left-[8%] h-0.5 bg-[#F45116] transition-all duration-700 ease-out"
+                                        <div className="absolute top-4 left-[8%] h-0.5 bg-[#0c7c40] transition-all duration-700 ease-out"
                                             style={{ width: `calc(${progressPercent}% * 0.84)` }}
                                         />
 
@@ -444,9 +444,9 @@ function TrackOrderContent() {
                                             <div key={step.key} className="relative z-10 flex flex-col items-center w-[18%]">
                                                 <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 transition-all duration-300
                                                     ${step.completed
-                                                        ? 'bg-[#F45116] border-[#F45116] text-white'
+                                                        ? 'bg-[#0c7c40] border-[#0c7c40] text-white'
                                                         : 'bg-white border-gray-300 text-gray-300'}
-                                                    ${step.active ? 'ring-4 ring-[#F45116]/20 scale-105' : ''}
+                                                    ${step.active ? 'ring-4 ring-[#0c7c40]/20 scale-105' : ''}
                                                 `}>
                                                     {step.completed ? <Check className="w-4 h-4" /> : <span className="text-xs font-medium">{index + 1}</span>}
                                                 </div>
@@ -466,12 +466,12 @@ function TrackOrderContent() {
                                             <div key={step.key} className="relative flex gap-4">
                                                 {index < timeline.length - 1 && (
                                                     <div className="absolute left-[11px] top-6 bottom-0 w-0.5 bg-gray-200">
-                                                        {step.completed && <div className="w-full h-full bg-[#F45116]" />}
+                                                        {step.completed && <div className="w-full h-full bg-[#0c7c40]" />}
                                                     </div>
                                                 )}
 
                                                 <div className={`relative z-10 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 border-2 transition-colors
-                                                    ${step.completed ? 'bg-[#F45116] border-[#F45116] text-white' : 'bg-white border-gray-300 text-gray-300'}
+                                                    ${step.completed ? 'bg-[#0c7c40] border-[#0c7c40] text-white' : 'bg-white border-gray-300 text-gray-300'}
                                                 `}>
                                                     {step.completed ? <Check className="w-3.5 h-3.5" /> : <span className="text-[9px]">{index + 1}</span>}
                                                 </div>
@@ -482,7 +482,7 @@ function TrackOrderContent() {
                                                             {step.label}
                                                         </p>
                                                         {step.active && (
-                                                            <span className="text-[9px] font-bold tracking-wider uppercase bg-[#F45116] text-white px-2 py-0.5 rounded">
+                                                            <span className="text-[9px] font-bold tracking-wider uppercase bg-[#0c7c40] text-white px-2 py-0.5 rounded">
                                                                 Current Status
                                                             </span>
                                                         )}
@@ -504,7 +504,7 @@ function TrackOrderContent() {
 
                                     
                                     <div className="flex items-start gap-3 mb-6 pb-6 border-b border-gray-200">
-                                        <MapPin className="w-4 h-4 text-[#F45116] mt-0.5 flex-shrink-0" />
+                                        <MapPin className="w-4 h-4 text-[#0c7c40] mt-0.5 flex-shrink-0" />
                                         <div className="min-w-0 flex-1">
                                             <p className="text-[10px] font-bold tracking-widest uppercase text-gray-400 mb-1">Shipping Address</p>
                                             <p className="text-xs sm:text-sm font-medium text-gray-800 leading-snug">
@@ -535,14 +535,14 @@ function TrackOrderContent() {
                                                             {itemImg ? (
                                                                 <img src={itemImg} alt="" className="w-full h-full object-cover" />
                                                             ) : (
-                                                                <ShoppingBag className="w-4 h-4 text-[#F45116]/40" />
+                                                                <ShoppingBag className="w-4 h-4 text-[#0c7c40]/40" />
                                                             )}
                                                         </div>
                                                         <div className="flex-1 min-w-0">
                                                             <p className="text-xs font-semibold text-gray-800 truncate">
                                                                 {item.product?.productName || item.productName || item.name || 'Product'}
                                                                 {variantLabel && (
-                                                                    <span className="ml-1 text-[#F45116] font-semibold text-[11px]">
+                                                                    <span className="ml-1 text-[#0c7c40] font-semibold text-[11px]">
                                                                         ({variantLabel})
                                                                     </span>
                                                                 )}
@@ -562,7 +562,7 @@ function TrackOrderContent() {
                                     {orderTotal > 0 && (
                                         <div className="flex items-center justify-between mb-6">
                                             <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Grand Total</span>
-                                            <span className="text-xl font-bold text-[#F45116]">{formatPrice(orderTotal)}</span>
+                                            <span className="text-xl font-bold text-[#0c7c40]">{formatPrice(orderTotal)}</span>
                                         </div>
                                     )}
 
@@ -576,7 +576,7 @@ function TrackOrderContent() {
                                         </Link>
                                         <button
                                             onClick={() => { setOrder(null); setOrderNumber(''); setError(''); }}
-                                            className="w-full flex items-center justify-center gap-2 py-2.5 text-gray-500 text-xs font-semibold hover:text-[#F45116] transition-colors cursor-pointer"
+                                            className="w-full flex items-center justify-center gap-2 py-2.5 text-gray-500 text-xs font-semibold hover:text-[#0c7c40] transition-colors cursor-pointer"
                                         >
                                             Track Another Order
                                         </button>
@@ -606,7 +606,7 @@ export default function TrackOrder() {
     return (
         <Suspense fallback={
             <div className="min-h-[50vh] flex items-center justify-center">
-                <Loader2 className="w-8 h-8 animate-spin text-[#F45116]" />
+                <Loader2 className="w-8 h-8 animate-spin text-[#0c7c40]" />
             </div>
         }>
             <TrackOrderContent />

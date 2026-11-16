@@ -87,8 +87,8 @@ body {
 }
 
 .react-tel-input .form-control:focus {
-  border-color: #f45116 !important;
-  box-shadow: 0 0 0 1px #f45116 !important;
+  border-color: #0c7c40 !important;
+  box-shadow: 0 0 0 1px #0c7c40 !important;
   outline: none !important;
 }
 
@@ -241,23 +241,23 @@ body {
 }
 
 /* Global Dynamic Color Bridge: Force solid Tailwind hex classes to follow dynamic CSS theme variables */
-.text-\[\#F45116\],
-.text-\[\#f45116\] {
+.text-\[\#0c7c40\],
+.text-\[\#0c7c40\] {
   color: var(--primary) !important;
 }
 
-.bg-\[\#F45116\],
-.bg-\[\#f45116\] {
+.bg-\[\#0c7c40\],
+.bg-\[\#0c7c40\] {
   background-color: var(--primary) !important;
 }
 
-.border-\[\#F45116\],
-.border-\[\#f45116\] {
+.border-\[\#0c7c40\],
+.border-\[\#0c7c40\] {
   border-color: var(--primary) !important;
 }
 
-.ring-\[\#F45116\],
-.ring-\[\#f45116\] {
+.ring-\[\#0c7c40\],
+.ring-\[\#0c7c40\] {
   --tw-ring-color: var(--primary) !important;
 }
 

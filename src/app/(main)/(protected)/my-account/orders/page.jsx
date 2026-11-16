@@ -361,7 +361,7 @@ const OrderPage = () => {
         </p>
         <Link
           href="/login"
-          className="inline-block px-6 py-2.5 bg-[#F45116] hover:bg-[#D9400B] text-white rounded-[6px] text-sm font-semibold transition-colors duration-200 uppercase tracking-wide"
+          className="inline-block px-6 py-2.5 bg-[#0c7c40] hover:bg-[#096333] text-white rounded-[6px] text-sm font-semibold transition-colors duration-200 uppercase tracking-wide"
         >
           Sign In
         </Link>
@@ -374,12 +374,12 @@ const OrderPage = () => {
       <div className="space-y-6">
         {/* Breadcrumbs */}
         <div className="flex items-center gap-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-[#F45116] flex items-center gap-1 transition-colors duration-200">
+          <Link href="/" className="hover:text-[#0c7c40] flex items-center gap-1 transition-colors duration-200">
             <Home className="w-4 h-4" />
             Home
           </Link>
           <ChevronRight className="w-4 h-4 text-gray-400" />
-          <Link href="/my-account" className="hover:text-[#F45116] transition-colors duration-200">
+          <Link href="/my-account" className="hover:text-[#0c7c40] transition-colors duration-200">
             My Account
           </Link>
           <ChevronRight className="w-4 h-4 text-gray-400" />
@@ -387,7 +387,7 @@ const OrderPage = () => {
         </div>
 
         {/* Header */}
-        <div className="bg-[#F45116]/5 p-4 rounded-[12px] border border-[#F45116]/10">
+        <div className="bg-[#0c7c40]/5 p-4 rounded-[12px] border border-[#0c7c40]/10">
           <h1 className="text-xl font-bold text-gray-900 mb-1">
             My Orders
           </h1>
@@ -395,11 +395,11 @@ const OrderPage = () => {
         </div>
 
         {/* Return Notice */}
-        <div className="bg-[#F45116]/5 border border-[#F45116]/10 rounded-[12px] p-4 text-xs text-gray-700 flex items-start gap-2.5">
-          <AlertCircle className="w-4 h-4 text-[#F45116] mt-0.5 flex-shrink-0" />
+        <div className="bg-[#0c7c40]/5 border border-[#0c7c40]/10 rounded-[12px] p-4 text-xs text-gray-700 flex items-start gap-2.5">
+          <AlertCircle className="w-4 h-4 text-[#0c7c40] mt-0.5 flex-shrink-0" />
           <div>
             <p className="font-bold text-gray-900">Return Information</p>
-            <p className="mt-0.5 text-gray-600">Please note that there is no direct return option on the website. If you wish to return a product, please contact us directly at <a href={contactTel} className="font-bold underline text-[#F45116] hover:text-[#D9400B]">{contactPhone}</a>.</p>
+            <p className="mt-0.5 text-gray-600">Please note that there is no direct return option on the website. If you wish to return a product, please contact us directly at <a href={contactTel} className="font-bold underline text-[#0c7c40] hover:text-[#096333]">{contactPhone}</a>.</p>
           </div>
         </div>
 
@@ -415,7 +415,7 @@ const OrderPage = () => {
                   placeholder="Search by order number..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2.5 bg-white border border-gray-200 rounded-[6px] text-sm text-gray-900 placeholder-gray-450 focus:outline-none focus:ring-1 focus:ring-[#F45116] focus:border-[#F45116] transition-colors"
+                  className="w-full pl-9 pr-4 py-2.5 bg-white border border-gray-200 rounded-[6px] text-sm text-gray-900 placeholder-gray-450 focus:outline-none focus:ring-1 focus:ring-[#0c7c40] focus:border-[#0c7c40] transition-colors"
                 />
               </div>
             </div>
@@ -427,7 +427,7 @@ const OrderPage = () => {
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2.5 bg-white border border-gray-200 rounded-[6px] text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-[#F45116] focus:border-[#F45116] transition-colors appearance-none"
+                  className="w-full pl-9 pr-4 py-2.5 bg-white border border-gray-200 rounded-[6px] text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-[#0c7c40] focus:border-[#0c7c40] transition-colors appearance-none"
                 >
                   <option value="All">All Orders</option>
                   <option value="Pending">Pending</option>
@@ -464,7 +464,7 @@ const OrderPage = () => {
             </p>
             <Link
               href="/product"
-              className="inline-block px-6 py-2.5 bg-[#F45116] hover:bg-[#D9400B] text-white rounded-[6px] text-sm font-semibold transition-colors uppercase tracking-wide cursor-pointer"
+              className="inline-block px-6 py-2.5 bg-[#0c7c40] hover:bg-[#096333] text-white rounded-[6px] text-sm font-semibold transition-colors uppercase tracking-wide cursor-pointer"
             >
               Start Shopping
             </Link>
@@ -474,7 +474,7 @@ const OrderPage = () => {
             {filteredOrders.map((order) => (
               <div
                 key={order.id}
-                className="bg-white rounded-[12px] border border-gray-150/80 overflow-hidden shadow-xs hover:border-[#F45116]/30 transition-all duration-200"
+                className="bg-white rounded-[12px] border border-gray-150/80 overflow-hidden shadow-xs hover:border-[#0c7c40]/30 transition-all duration-200"
               >
                 {/* Order Header */}
                 <div className="p-5 border-b border-gray-100 bg-gray-50/20">
@@ -496,7 +496,7 @@ const OrderPage = () => {
                           {order.orderItems?.length || 0}{" "}
                           {(order.orderItems?.length || 0) === 1 ? "Item" : "Items"}
                         </span>
-                        <span className="font-bold text-[#F45116]">
+                        <span className="font-bold text-[#0c7c40]">
                           {formatPrice(order.grandTotal)}
                         </span>
                       </div>
@@ -511,10 +511,10 @@ const OrderPage = () => {
                         }}
                         disabled={downloadingOrderId === order.id}
                         title="Download Invoice (PDF)"
-                        className="flex items-center gap-1.5 px-3 py-2 border border-gray-250 text-gray-700 hover:text-[#F45116] hover:border-[#F45116] hover:bg-[#F45116]/5 rounded-[6px] transition-colors text-xs font-bold uppercase tracking-wider cursor-pointer disabled:opacity-50"
+                        className="flex items-center gap-1.5 px-3 py-2 border border-gray-250 text-gray-700 hover:text-[#0c7c40] hover:border-[#0c7c40] hover:bg-[#0c7c40]/5 rounded-[6px] transition-colors text-xs font-bold uppercase tracking-wider cursor-pointer disabled:opacity-50"
                       >
                         {downloadingOrderId === order.id ? (
-                          <Loader2 className="w-3.5 h-3.5 animate-spin text-[#F45116]" />
+                          <Loader2 className="w-3.5 h-3.5 animate-spin text-[#0c7c40]" />
                         ) : (
                           <Download className="w-3.5 h-3.5 text-gray-500" />
                         )}
@@ -526,7 +526,7 @@ const OrderPage = () => {
                           setSelectedOrder(order);
                           setIsDrawerOpen(true);
                         }}
-                        className="flex items-center gap-1 px-4 py-2 border border-[#F45116] text-[#F45116] hover:bg-[#F45116]/5 rounded-[6px] transition-colors text-xs font-bold uppercase tracking-wider cursor-pointer"
+                        className="flex items-center gap-1 px-4 py-2 border border-[#0c7c40] text-[#0c7c40] hover:bg-[#0c7c40]/5 rounded-[6px] transition-colors text-xs font-bold uppercase tracking-wider cursor-pointer"
                       >
                         <Eye className="w-3.5 h-3.5" />
                         View Details
@@ -552,7 +552,7 @@ const OrderPage = () => {
                     {order.orderItems && order.orderItems.length > 0 && (
                       <div>
                         <h4 className="text-sm font-bold text-gray-900 mb-2.5 flex items-center gap-1.5">
-                          <Package className="w-4 h-4 text-[#F45116]" />
+                          <Package className="w-4 h-4 text-[#0c7c40]" />
                           Ordered Items ({order.orderItems.length})
                         </h4>
                         <div className="bg-white rounded-[12px] border border-gray-150 divide-y divide-gray-100 overflow-hidden">
@@ -579,7 +579,7 @@ const OrderPage = () => {
                                   <p className="text-xs font-bold text-gray-900 truncate">
                                     {item.product?.productName || "Product Item"}
                                     {variantLabel && (
-                                      <span className="ml-1 text-[#F45116] font-semibold text-[11px]">
+                                      <span className="ml-1 text-[#0c7c40] font-semibold text-[11px]">
                                         ({variantLabel})
                                       </span>
                                     )}
@@ -659,7 +659,7 @@ const OrderPage = () => {
                           </div>
                           <div className="border-t pt-2.5 flex justify-between font-bold text-gray-900 text-sm">
                             <span>Grand Total</span>
-                            <span className="text-[#F45116]">
+                            <span className="text-[#0c7c40]">
                               {formatPrice(order.grandTotal)}
                             </span>
                           </div>

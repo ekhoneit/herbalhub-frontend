@@ -77,13 +77,13 @@ export default function CheckoutOrderBump({
         onClick={() => setIncludeBump(!includeBump)}
         className={`p-4 rounded-2xl border-2 transition-all duration-300 cursor-pointer relative overflow-hidden select-none mb-6 shadow-sm ${
           includeBump
-            ? "border-[#F45116] bg-gradient-to-r from-amber-50/80 to-orange-50/70 shadow-md ring-2 ring-[#F45116]/20"
-            : "border-dashed border-amber-400 bg-amber-50/40 hover:bg-amber-50/70 hover:border-[#F45116]/70"
+            ? "border-[#0c7c40] bg-gradient-to-r from-amber-50/80 to-orange-50/70 shadow-md ring-2 ring-[#0c7c40]/20"
+            : "border-dashed border-amber-400 bg-amber-50/40 hover:bg-amber-50/70 hover:border-[#0c7c40]/70"
         }`}
       >
         {/* Flash Offer Badge Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-3">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-black bg-gradient-to-r from-[#F45116] to-[#D9400B] text-white shadow-md ring-2 ring-[#F45116]/20 tracking-tight">
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-black bg-gradient-to-r from-[#0c7c40] to-[#096333] text-white shadow-md ring-2 ring-[#0c7c40]/20 tracking-tight">
             <Flame size={15} className="animate-pulse text-amber-200 shrink-0 fill-amber-200" />
             <span className="font-extrabold drop-shadow-xs">এক ক্লিকে যোগ করুন (স্পেশাল অফার)</span>
           </span>
@@ -97,9 +97,9 @@ export default function CheckoutOrderBump({
 
         <div className="flex items-start gap-3.5">
           {/* Checkbox Icon */}
-          <div className="mt-1 shrink-0 text-[#F45116]">
+          <div className="mt-1 shrink-0 text-[#0c7c40]">
             {includeBump ? (
-              <CheckSquare size={22} className="text-[#F45116] fill-[#F45116]/10" />
+              <CheckSquare size={22} className="text-[#0c7c40] fill-[#0c7c40]/10" />
             ) : (
               <Square size={22} className="text-slate-400 hover:text-slate-600 transition-colors" />
             )}
@@ -107,7 +107,7 @@ export default function CheckoutOrderBump({
 
           {/* Bump Product Thumbnail with zoom */}
           <div
-            className="w-16 h-16 rounded-xl bg-white border border-slate-200 overflow-hidden relative shrink-0 p-1 flex items-center justify-center cursor-zoom-in group shadow-xs hover:border-[#F45116]/60 transition"
+            className="w-16 h-16 rounded-xl bg-white border border-slate-200 overflow-hidden relative shrink-0 p-1 flex items-center justify-center cursor-zoom-in group shadow-xs hover:border-[#0c7c40]/60 transition"
             title="ছবি বড় করে দেখতে ক্লিক করুন"
             onClick={(e) => {
               e.stopPropagation();
@@ -131,7 +131,7 @@ export default function CheckoutOrderBump({
                 </div>
               </>
             ) : (
-              <Package size={24} className="text-[#F45116]/60 m-auto" />
+              <Package size={24} className="text-[#0c7c40]/60 m-auto" />
             )}
           </div>
 
@@ -144,7 +144,7 @@ export default function CheckoutOrderBump({
             {/* Product Name Badge */}
             <div className="mt-1 flex items-center gap-1.5 flex-wrap">
               <span className="text-[11px] sm:text-xs font-extrabold text-slate-800 bg-white px-2 py-0.5 rounded-md border border-slate-200 inline-flex items-center gap-1 shadow-2xs">
-                <Package size={12} className="text-[#F45116]" />
+                <Package size={12} className="text-[#0c7c40]" />
                 <span className="truncate max-w-[240px] sm:max-w-none">{bumpProduct.productName}</span>
               </span>
             </div>
@@ -190,7 +190,7 @@ export default function CheckoutOrderBump({
 
               return (
                 <div className="flex items-center gap-2 mt-2 flex-wrap">
-                  <span className="text-xs sm:text-sm font-black text-[#F45116]">
+                  <span className="text-xs sm:text-sm font-black text-[#0c7c40]">
                     + ৳{Math.ceil(bumpUnitPrice).toLocaleString()}
                   </span>
                   {hasDiscount && (
@@ -238,7 +238,7 @@ export default function CheckoutOrderBump({
                         }}
                         className={`px-2 py-1 rounded-md text-[11px] font-medium transition cursor-pointer border flex items-center gap-1 ${
                           isSelected
-                            ? "bg-[#F45116] text-white border-[#F45116] shadow-xs font-bold"
+                            ? "bg-[#0c7c40] text-white border-[#0c7c40] shadow-xs font-bold"
                             : "bg-white text-slate-700 border-slate-200 hover:border-slate-300"
                         }`}
                       >

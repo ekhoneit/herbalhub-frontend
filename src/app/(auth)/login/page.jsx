@@ -73,7 +73,7 @@ const Login = () => {
                 icon: 'error',
                 title: 'Login Failed',
                 text: error.message || 'Invalid credentials. Please try again.',
-                confirmButtonColor: '#F45116'
+                confirmButtonColor: '#0c7c40'
             });
         } finally {
             setIsLoading(false);
@@ -89,7 +89,7 @@ const Login = () => {
                 icon: 'error',
                 title: 'Oops...',
                 text: 'Social login failed. Please try again.',
-                confirmButtonColor: '#F45116'
+                confirmButtonColor: '#0c7c40'
             });
         }
     };
@@ -232,7 +232,7 @@ const Login = () => {
                             <button
                                 type="submit"
                                 disabled={isLoading}
-                                className="w-full flex justify-center py-2.5 px-4 border border-transparent text-sm font-semibold rounded-[6px] text-white bg-primary hover:bg-[#D9400B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-150 ease-in-out uppercase cursor-pointer disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed shadow-sm"
+                                className="w-full flex justify-center py-2.5 px-4 border border-transparent text-sm font-semibold rounded-[6px] text-white bg-primary hover:bg-[#096333] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-150 ease-in-out uppercase cursor-pointer disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed shadow-sm"
                             >
                                 {isLoading ? 'Signing in...' : 'Sign in'}
                             </button>

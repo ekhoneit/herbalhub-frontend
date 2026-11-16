@@ -179,13 +179,13 @@ export default function WelcomeAudioPlayer() {
         onClick={togglePlay}
         className={`relative w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 shadow-xl border-2 border-white cursor-pointer active:scale-90 ${
           isPlaying
-            ? "bg-[#F45116] hover:bg-[#D9400B] scale-105"
+            ? "bg-[#0c7c40] hover:bg-[#096333] scale-105"
             : "bg-[#102D50] hover:bg-[#1E4675]"
         }`}
         title={isPlaying ? "ভয়েস বন্ধ করুন (Pause)" : "ভয়েস চালু করুন (Play)"}
       >
         {isPlaying && (
-          <span className="absolute -inset-1 rounded-full border-2 border-[#F45116] animate-ping opacity-60 pointer-events-none" />
+          <span className="absolute -inset-1 rounded-full border-2 border-[#0c7c40] animate-ping opacity-60 pointer-events-none" />
         )}
         {isPlaying ? (
           <Pause size={18} className="drop-shadow-xs" />

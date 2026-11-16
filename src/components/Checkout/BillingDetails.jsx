@@ -416,7 +416,7 @@ const BillingDetails = ({
         icon: "error",
         title: "Error",
         text: "Customer information is missing.",
-        confirmButtonColor: "#F45116",
+        confirmButtonColor: "#0c7c40",
       });
       return;
     }
@@ -425,7 +425,7 @@ const BillingDetails = ({
         icon: "error",
         title: "Error",
         text: "Please select a shipping address",
-        confirmButtonColor: "#F45116",
+        confirmButtonColor: "#0c7c40",
       });
       return;
     }
@@ -463,7 +463,7 @@ const BillingDetails = ({
           icon: "error",
           title: "Error",
           text: "ফোন নম্বর লিখুন",
-          confirmButtonColor: "#F45116",
+          confirmButtonColor: "#0c7c40",
         });
         return;
       }
@@ -473,7 +473,7 @@ const BillingDetails = ({
           icon: "error",
           title: "ভুল ফোন নম্বর",
           text: "ফোন নম্বর অবশ্যই 01 দিয়ে শুরু এবং সঠিক ১১ ডিজিট হতে হবে।",
-          confirmButtonColor: "#F45116",
+          confirmButtonColor: "#0c7c40",
         });
         return;
       }
@@ -602,7 +602,7 @@ const BillingDetails = ({
         icon: "error",
         title: "Error",
         text: error.message || "Failed to process checkout",
-        confirmButtonColor: "#F45116",
+        confirmButtonColor: "#0c7c40",
       });
     }
   };
@@ -685,14 +685,14 @@ const BillingDetails = ({
         {/* Shipping Method */}
         <div className="mb-6">
           <p className="font-medium text-xs md:text-base mb-2 md:mb-3 flex items-center gap-2 text-gray-900">
-            <Truck size={17} className="text-[#F45116]" />
+            <Truck size={17} className="text-[#0c7c40]" />
             <span>Shipping Method</span>
           </p>
           <div className="grid grid-cols-2 gap-2 md:gap-3">
             <label
               className={`flex items-center gap-2 p-2.5 md:p-3 border rounded-[8px] cursor-pointer transition-all text-xs md:text-sm ${
                 currentShipping === "dhaka-city"
-                  ? "border-[#F45116] bg-[#F45116]/5 font-semibold text-gray-900 shadow-xs"
+                  ? "border-[#0c7c40] bg-[#0c7c40]/5 font-semibold text-gray-900 shadow-xs"
                   : "border-gray-200 hover:bg-gray-50 text-gray-700"
               }`}
             >
@@ -700,12 +700,12 @@ const BillingDetails = ({
                 type="radio"
                 value="dhaka-city"
                 {...register("shipping")}
-                className="h-3.5 w-3.5 md:h-4 md:w-4 text-[#F45116] accent-[#F45116] shrink-0"
+                className="h-3.5 w-3.5 md:h-4 md:w-4 text-[#0c7c40] accent-[#0c7c40] shrink-0"
               />
               <div className="flex-1 min-w-0">
                 <p className="font-medium truncate">Dhaka City</p>
               </div>
-              <p className="font-semibold text-xs md:text-sm shrink-0 text-[#F45116]">
+              <p className="font-semibold text-xs md:text-sm shrink-0 text-[#0c7c40]">
                 {deliveryCharges.insideDhaka === 0
                   ? "Free"
                   : renderPrice(deliveryCharges.insideDhaka)}
@@ -714,7 +714,7 @@ const BillingDetails = ({
             <label
               className={`flex items-center gap-2 p-2.5 md:p-3 border rounded-[8px] cursor-pointer transition-all text-xs md:text-sm ${
                 currentShipping === "outside"
-                  ? "border-[#F45116] bg-[#F45116]/5 font-semibold text-gray-900 shadow-xs"
+                  ? "border-[#0c7c40] bg-[#0c7c40]/5 font-semibold text-gray-900 shadow-xs"
                   : "border-gray-200 hover:bg-gray-50 text-gray-700"
               }`}
             >
@@ -722,12 +722,12 @@ const BillingDetails = ({
                 type="radio"
                 value="outside"
                 {...register("shipping")}
-                className="h-3.5 w-3.5 md:h-4 md:w-4 text-[#F45116] accent-[#F45116] shrink-0"
+                className="h-3.5 w-3.5 md:h-4 md:w-4 text-[#0c7c40] accent-[#0c7c40] shrink-0"
               />
               <div className="flex-1 min-w-0">
                 <p className="font-medium truncate">Outside Dhaka</p>
               </div>
-              <p className="font-semibold text-xs md:text-sm shrink-0 text-[#F45116]">
+              <p className="font-semibold text-xs md:text-sm shrink-0 text-[#0c7c40]">
                 {deliveryCharges.outsideDhaka === 0
                   ? "Free"
                   : renderPrice(deliveryCharges.outsideDhaka)}
@@ -739,7 +739,7 @@ const BillingDetails = ({
         {/* Payment Method */}
         <div className="mb-6">
           <p className="font-medium text-xs md:text-base mb-2 md:mb-3 flex items-center gap-2 text-gray-900">
-            <CreditCard size={17} className="text-[#F45116]" />
+            <CreditCard size={17} className="text-[#0c7c40]" />
             <span>Payment Method</span>
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-3">
@@ -747,7 +747,7 @@ const BillingDetails = ({
             <label
               className={`flex items-center gap-2.5 p-3 border rounded-[8px] cursor-pointer transition-all text-xs md:text-sm ${
                 (watchPayment || "cod") === "cod"
-                  ? "border-[#F45116] bg-[#F45116]/5 font-semibold text-gray-900 shadow-xs"
+                  ? "border-[#0c7c40] bg-[#0c7c40]/5 font-semibold text-gray-900 shadow-xs"
                   : "border-gray-200 hover:bg-gray-50 text-gray-700"
               }`}
             >
@@ -755,7 +755,7 @@ const BillingDetails = ({
                 type="radio"
                 value="cod"
                 {...register("payment")}
-                className="h-3.5 w-3.5 md:h-4 md:w-4 text-[#F45116] accent-[#F45116] shrink-0"
+                className="h-3.5 w-3.5 md:h-4 md:w-4 text-[#0c7c40] accent-[#0c7c40] shrink-0"
                 defaultChecked
               />
               <span className="text-xs md:text-sm text-gray-900 font-medium">
@@ -810,13 +810,13 @@ const BillingDetails = ({
         {/* Order Notes */}
         <div className="mb-6">
           <label className="block mb-1 font-medium text-xs md:text-sm text-gray-900 flex items-center gap-1.5">
-            <FileText size={15} className="text-[#F45116]" />
+            <FileText size={15} className="text-[#0c7c40]" />
             <span>Order Notes (Optional)</span>
           </label>
           <textarea
             {...register("note")}
             placeholder="Special instructions for delivery, landmark, or timing..."
-            className="w-full text-xs md:text-sm px-3 md:px-4 py-2 border border-gray-200 rounded-[8px] focus:outline-none focus:ring-1 focus:ring-[#F45116] focus:border-[#F45116] transition-all h-24 bg-white"
+            className="w-full text-xs md:text-sm px-3 md:px-4 py-2 border border-gray-200 rounded-[8px] focus:outline-none focus:ring-1 focus:ring-[#0c7c40] focus:border-[#0c7c40] transition-all h-24 bg-white"
             rows={3}
           />
         </div>
@@ -827,7 +827,7 @@ const BillingDetails = ({
   if (isLoading) {
     return (
       <div className="flex items-center justify-center py-12">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#F45116]"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#0c7c40]"></div>
       </div>
     );
   }
@@ -853,7 +853,7 @@ const BillingDetails = ({
             </div>
             <Link
               href="/my-account"
-              className="text-sm text-[#F45116] hover:underline font-medium"
+              className="text-sm text-[#0c7c40] hover:underline font-medium"
             >
               My Account
             </Link>
@@ -876,7 +876,7 @@ const BillingDetails = ({
               <button
                 type="button"
                 onClick={() => setShowAllAddresses(true)}
-                className="text-sm text-[#F45116] hover:underline font-medium flex items-center gap-1"
+                className="text-sm text-[#0c7c40] hover:underline font-medium flex items-center gap-1"
               >
                 Change Address <FaLongArrowAltRight className="text-xs" />
               </button>
@@ -937,7 +937,7 @@ const BillingDetails = ({
             <button
               type="button"
               onClick={() => setIsAddingNewAddress(true)}
-              className="flex items-center gap-2 px-4 py-2 text-[#F45116] border border-[#F45116] rounded-[8px] hover:bg-[#F45116]/5 transition-colors font-medium cursor-pointer text-sm"
+              className="flex items-center gap-2 px-4 py-2 text-[#0c7c40] border border-[#0c7c40] rounded-[8px] hover:bg-[#0c7c40]/5 transition-colors font-medium cursor-pointer text-sm"
             >
               <Plus className="w-4 h-4" />
               Add New Address
@@ -967,7 +967,7 @@ const BillingDetails = ({
           <div className="space-y-4 mb-6">
             <div className="flex items-center justify-between mb-3">
               <h3 className="font-semibold text-base md:text-lg text-gray-900 flex items-center gap-2">
-                <MapPin size={18} className="text-[#F45116]" />
+                <MapPin size={18} className="text-[#0c7c40]" />
                 <span>
                   {effectiveUser
                     ? addresses.length > 0
@@ -979,7 +979,7 @@ const BillingDetails = ({
               {!effectiveUser && (
                 <Link
                   href="/login"
-                  className="text-xs text-[#F45116] hover:underline font-semibold cursor-pointer"
+                  className="text-xs text-[#0c7c40] hover:underline font-semibold cursor-pointer"
                 >
                   Already have an account? Log In
                 </Link>
@@ -997,7 +997,7 @@ const BillingDetails = ({
                     minLength: { value: 2, message: "At least 2 characters" },
                   })}
                   placeholder="Full Name"
-                  className="w-full text-xs md:text-sm placeholder:text-xs md:placeholder:text-sm px-3 md:px-4 py-2.5 h-10 md:h-11 border border-gray-200 rounded-[8px] focus:outline-none focus:ring-1 focus:ring-[#F45116] focus:border-[#F45116] transition-all bg-white text-gray-900"
+                  className="w-full text-xs md:text-sm placeholder:text-xs md:placeholder:text-sm px-3 md:px-4 py-2.5 h-10 md:h-11 border border-gray-200 rounded-[8px] focus:outline-none focus:ring-1 focus:ring-[#0c7c40] focus:border-[#0c7c40] transition-all bg-white text-gray-900"
                 />
                 {errors.recipientName && (
                   <p className="text-red-500 text-xs md:text-sm mt-1">
@@ -1031,7 +1031,7 @@ const BillingDetails = ({
                     e.target.value = val;
                   }}
                   placeholder="01XXXXXXXXX"
-                  className="w-full text-xs md:text-sm placeholder:text-xs md:placeholder:text-sm px-3 md:px-4 py-2.5 h-10 md:h-11 border border-gray-200 rounded-[8px] focus:outline-none focus:ring-1 focus:ring-[#F45116] focus:border-[#F45116] transition-all bg-white text-gray-900"
+                  className="w-full text-xs md:text-sm placeholder:text-xs md:placeholder:text-sm px-3 md:px-4 py-2.5 h-10 md:h-11 border border-gray-200 rounded-[8px] focus:outline-none focus:ring-1 focus:ring-[#0c7c40] focus:border-[#0c7c40] transition-all bg-white text-gray-900"
                 />
                 {errors.phoneNumber && (
                   <p className="text-red-500 text-xs md:text-sm mt-1">
@@ -1062,7 +1062,7 @@ const BillingDetails = ({
                     },
                   })}
                   placeholder="your@email.com"
-                  className="w-full text-xs md:text-sm placeholder:text-xs md:placeholder:text-sm px-3 md:px-4 py-2.5 h-10 md:h-11 border border-gray-200 rounded-[8px] focus:outline-none focus:ring-1 focus:ring-[#F45116] focus:border-[#F45116] transition-all bg-white text-gray-900"
+                  className="w-full text-xs md:text-sm placeholder:text-xs md:placeholder:text-sm px-3 md:px-4 py-2.5 h-10 md:h-11 border border-gray-200 rounded-[8px] focus:outline-none focus:ring-1 focus:ring-[#0c7c40] focus:border-[#0c7c40] transition-all bg-white text-gray-900"
                 />
                 {errors.email && (
                   <p className="text-red-500 text-xs md:text-sm mt-1">
@@ -1090,14 +1090,14 @@ const BillingDetails = ({
                         }
                         className={`flex items-center justify-center gap-1.5 px-2 py-2 rounded-[8px] border text-xs md:text-sm transition-all cursor-pointer ${
                           isSelected
-                            ? "border-[#F45116] bg-[#F45116]/10 text-[#F45116] font-bold shadow-xs"
+                            ? "border-[#0c7c40] bg-[#0c7c40]/10 text-[#0c7c40] font-bold shadow-xs"
                             : "border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
                         }`}
                       >
                         <Icon
                           size={14}
                           className={
-                            isSelected ? "text-[#F45116]" : "text-gray-400"
+                            isSelected ? "text-[#0c7c40]" : "text-gray-400"
                           }
                         />
                         <span>{label}</span>
@@ -1141,7 +1141,7 @@ const BillingDetails = ({
                   },
                 })}
                 placeholder="বাসা/হোল্ডিং নম্বর, রোড/সেক্টর, থানা, জেলা (e.g. Block #D, Road #2, Sector #10, House #15, Uttara, Dhaka)"
-                className="w-full text-xs md:text-sm placeholder:text-xs md:placeholder:text-sm px-3 md:px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#F45116] focus:border-[#F45116] transition-all h-20 md:h-24 bg-white text-gray-900"
+                className="w-full text-xs md:text-sm placeholder:text-xs md:placeholder:text-sm px-3 md:px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#0c7c40] focus:border-[#0c7c40] transition-all h-20 md:h-24 bg-white text-gray-900"
                 rows={3}
               />
               {errors.address && (
@@ -1156,7 +1156,7 @@ const BillingDetails = ({
                 <input
                   type="checkbox"
                   {...register("isDefault")}
-                  className="h-4 w-4 text-[#F45116] accent-[#F45116] rounded"
+                  className="h-4 w-4 text-[#0c7c40] accent-[#0c7c40] rounded"
                   defaultChecked={addresses.length === 0}
                 />
                 <label className="ml-2 text-xs md:text-sm text-gray-700">
@@ -1195,13 +1195,13 @@ const BillingDetails = ({
                       key={address.id}
                       className={`relative bg-white rounded-xl border-2 transition-all duration-300 cursor-pointer hover:shadow-md ${
                         isSelected
-                          ? "border-[#F45116] shadow-md"
-                          : "border-gray-200 hover:border-[#F45116]/40"
+                          ? "border-[#0c7c40] shadow-md"
+                          : "border-gray-200 hover:border-[#0c7c40]/40"
                       }`}
                       onClick={() => handleAddressSelect(address)}
                     >
                       {address.isDefault && (
-                        <div className="absolute -top-2.5 left-4 px-3 py-0.5 bg-gradient-to-r from-[#F45116] to-[#D9400B] text-white text-[11px] font-bold rounded-full shadow-sm flex items-center gap-1">
+                        <div className="absolute -top-2.5 left-4 px-3 py-0.5 bg-gradient-to-r from-[#0c7c40] to-[#096333] text-white text-[11px] font-bold rounded-full shadow-sm flex items-center gap-1">
                           <Star className="w-3 h-3 fill-current" /> DEFAULT
                         </div>
                       )}
@@ -1242,7 +1242,7 @@ const BillingDetails = ({
                           <div
                             className={`w-5 h-5 border-2 rounded-full flex items-center justify-center ${
                               isSelected
-                                ? "border-[#F45116] bg-[#F45116]"
+                                ? "border-[#0c7c40] bg-[#0c7c40]"
                                 : "border-gray-300"
                             }`}
                           >
@@ -1260,7 +1260,7 @@ const BillingDetails = ({
                 <button
                   onClick={() => setShowAllAddresses(false)}
                   disabled={!selectedAddress}
-                  className="flex-1 py-3 bg-[#F45116] hover:bg-[#D9400B] text-white rounded-xl font-bold transition-colors disabled:opacity-50"
+                  className="flex-1 py-3 bg-[#0c7c40] hover:bg-[#096333] text-white rounded-xl font-bold transition-colors disabled:opacity-50"
                 >
                   Use Selected Address
                 </button>

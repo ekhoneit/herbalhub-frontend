@@ -215,7 +215,7 @@ const AddressEditDrawer = ({ isOpen, onClose, address, onSuccess }) => {
                     icon: 'success',
                     title: 'Success!',
                     text: 'Address updated successfully',
-                    confirmButtonColor: '#F45116',
+                    confirmButtonColor: '#0c7c40',
                     timer: 1500,
                     showConfirmButton: false
                 });
@@ -234,7 +234,7 @@ const AddressEditDrawer = ({ isOpen, onClose, address, onSuccess }) => {
                 icon: 'error',
                 title: 'Error',
                 text: error.message || 'Failed to update address',
-                confirmButtonColor: '#F45116'
+                confirmButtonColor: '#0c7c40'
             });
         } finally {
             setIsSubmitting(false);
@@ -273,12 +273,12 @@ const AddressEditDrawer = ({ isOpen, onClose, address, onSuccess }) => {
                         {/* Drawer Header */}
                         <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-white flex-shrink-0">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-[#F45116]/10 flex items-center justify-center text-[#F45116]">
+                                <div className="w-10 h-10 rounded-full bg-[#0c7c40]/10 flex items-center justify-center text-[#0c7c40]">
                                     <MapPin className="w-5 h-5" />
                                 </div>
                                 <div>
                                     <div className="flex items-center gap-2">
-                                        <span className="text-[10px] uppercase font-bold tracking-widest text-[#F45116] bg-[#F45116]/5 px-2 py-0.5 rounded-full">
+                                        <span className="text-[10px] uppercase font-bold tracking-widest text-[#0c7c40] bg-[#0c7c40]/5 px-2 py-0.5 rounded-full">
                                             Update Details
                                         </span>
                                     </div>
@@ -321,7 +321,7 @@ const AddressEditDrawer = ({ isOpen, onClose, address, onSuccess }) => {
                                                 className={`w-full pl-10 pr-3.5 py-2.5 bg-gray-50/70 border rounded-lg text-sm text-gray-800 focus:bg-white focus:outline-none transition-all ${
                                                     errors.recipientName
                                                         ? 'border-rose-400 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20'
-                                                        : 'border-gray-200 focus:border-[#F45116] focus:ring-2 focus:ring-[#F45116]/15'
+                                                        : 'border-gray-200 focus:border-[#0c7c40] focus:ring-2 focus:ring-[#0c7c40]/15'
                                                 }`}
                                                 placeholder="Full name of recipient"
                                             />
@@ -349,7 +349,7 @@ const AddressEditDrawer = ({ isOpen, onClose, address, onSuccess }) => {
                                                 className={`w-full pl-10 pr-3.5 py-2.5 bg-gray-50/70 border rounded-lg text-sm text-gray-800 focus:bg-white focus:outline-none transition-all ${
                                                     errors.phoneNumber
                                                         ? 'border-rose-400 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20'
-                                                        : 'border-gray-200 focus:border-[#F45116] focus:ring-2 focus:ring-[#F45116]/15'
+                                                        : 'border-gray-200 focus:border-[#0c7c40] focus:ring-2 focus:ring-[#0c7c40]/15'
                                                 }`}
                                                 placeholder="01XXXXXXXXX"
                                             />
@@ -372,7 +372,7 @@ const AddressEditDrawer = ({ isOpen, onClose, address, onSuccess }) => {
                                             className={`w-full px-3.5 py-2.5 bg-gray-50/70 border rounded-lg text-sm text-gray-800 focus:bg-white focus:outline-none transition-all cursor-pointer ${
                                                 errors.division
                                                     ? 'border-rose-400 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20'
-                                                    : 'border-gray-200 focus:border-[#F45116] focus:ring-2 focus:ring-[#F45116]/15'
+                                                    : 'border-gray-200 focus:border-[#0c7c40] focus:ring-2 focus:ring-[#0c7c40]/15'
                                             }`}
                                         >
                                             <option value="">Select Division</option>
@@ -400,7 +400,7 @@ const AddressEditDrawer = ({ isOpen, onClose, address, onSuccess }) => {
                                             className={`w-full px-3.5 py-2.5 bg-gray-50/70 border rounded-lg text-sm text-gray-800 focus:bg-white focus:outline-none transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${
                                                 errors.district
                                                     ? 'border-rose-400 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20'
-                                                    : 'border-gray-200 focus:border-[#F45116] focus:ring-2 focus:ring-[#F45116]/15'
+                                                    : 'border-gray-200 focus:border-[#0c7c40] focus:ring-2 focus:ring-[#0c7c40]/15'
                                             }`}
                                         >
                                             <option value="">
@@ -430,7 +430,7 @@ const AddressEditDrawer = ({ isOpen, onClose, address, onSuccess }) => {
                                             className={`w-full px-3.5 py-2.5 bg-gray-50/70 border rounded-lg text-sm text-gray-800 focus:bg-white focus:outline-none transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${
                                                 errors.upazila
                                                     ? 'border-rose-400 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20'
-                                                    : 'border-gray-200 focus:border-[#F45116] focus:ring-2 focus:ring-[#F45116]/15'
+                                                    : 'border-gray-200 focus:border-[#0c7c40] focus:ring-2 focus:ring-[#0c7c40]/15'
                                             }`}
                                         >
                                             <option value="">
@@ -462,7 +462,7 @@ const AddressEditDrawer = ({ isOpen, onClose, address, onSuccess }) => {
                                             className={`w-full px-3.5 py-2.5 bg-gray-50/70 border rounded-lg text-sm text-gray-800 focus:bg-white focus:outline-none transition-all ${
                                                 errors.postalCode
                                                     ? 'border-rose-400 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20'
-                                                    : 'border-gray-200 focus:border-[#F45116] focus:ring-2 focus:ring-[#F45116]/15'
+                                                    : 'border-gray-200 focus:border-[#0c7c40] focus:ring-2 focus:ring-[#0c7c40]/15'
                                             }`}
                                             placeholder="e.g. 1216"
                                         />
@@ -482,7 +482,7 @@ const AddressEditDrawer = ({ isOpen, onClose, address, onSuccess }) => {
                                             value={formData.city}
                                             onChange={handleInputChange}
                                             disabled={isSubmitting}
-                                            className="w-full px-3.5 py-2.5 bg-gray-50/70 border border-gray-200 rounded-lg text-sm text-gray-800 focus:bg-white focus:outline-none focus:border-[#F45116] focus:ring-2 focus:ring-[#F45116]/15 transition-all"
+                                            className="w-full px-3.5 py-2.5 bg-gray-50/70 border border-gray-200 rounded-lg text-sm text-gray-800 focus:bg-white focus:outline-none focus:border-[#0c7c40] focus:ring-2 focus:ring-[#0c7c40]/15 transition-all"
                                             placeholder="City name"
                                         />
                                     </div>
@@ -515,7 +515,7 @@ const AddressEditDrawer = ({ isOpen, onClose, address, onSuccess }) => {
                                             className={`w-full px-3.5 py-2.5 bg-gray-50/70 border rounded-lg text-sm text-gray-800 focus:bg-white focus:outline-none transition-all ${
                                                 errors.address
                                                     ? 'border-rose-400 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20'
-                                                    : 'border-gray-200 focus:border-[#F45116] focus:ring-2 focus:ring-[#F45116]/15'
+                                                    : 'border-gray-200 focus:border-[#0c7c40] focus:ring-2 focus:ring-[#0c7c40]/15'
                                             }`}
                                             placeholder="House No, Road No, Area, Apartment Details"
                                         />
@@ -544,11 +544,11 @@ const AddressEditDrawer = ({ isOpen, onClose, address, onSuccess }) => {
                                                         disabled={isSubmitting}
                                                         className={`py-2.5 px-3 rounded-xl border flex items-center justify-center gap-2 transition-all cursor-pointer ${
                                                             isSelected
-                                                                ? 'border-[#F45116] bg-[#F45116]/5 text-[#F45116] font-bold shadow-xs'
+                                                                ? 'border-[#0c7c40] bg-[#0c7c40]/5 text-[#0c7c40] font-bold shadow-xs'
                                                                 : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300 hover:bg-gray-50'
                                                         }`}
                                                     >
-                                                        <Icon size={16} className={isSelected ? 'text-[#F45116]' : 'text-gray-400'} />
+                                                        <Icon size={16} className={isSelected ? 'text-[#0c7c40]' : 'text-gray-400'} />
                                                         <span className="text-xs md:text-sm">{label}</span>
                                                     </button>
                                                 );
@@ -565,7 +565,7 @@ const AddressEditDrawer = ({ isOpen, onClose, address, onSuccess }) => {
                                                 checked={formData.isDefault}
                                                 onChange={handleInputChange}
                                                 disabled={isSubmitting}
-                                                className="w-4 h-4 rounded text-[#F45116] focus:ring-[#F45116] border-gray-300 transition-colors cursor-pointer accent-[#F45116]"
+                                                className="w-4 h-4 rounded text-[#0c7c40] focus:ring-[#0c7c40] border-gray-300 transition-colors cursor-pointer accent-[#0c7c40]"
                                             />
                                             <span className="text-xs md:text-sm text-gray-700 font-medium">
                                                 Set as default shipping address
@@ -590,7 +590,7 @@ const AddressEditDrawer = ({ isOpen, onClose, address, onSuccess }) => {
                                 type="submit"
                                 form="address-edit-drawer-form"
                                 disabled={isSubmitting}
-                                className="px-6 py-2.5 bg-[#F45116] hover:bg-[#D9400B] text-white font-semibold text-xs md:text-sm rounded-lg transition-all shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 cursor-pointer uppercase tracking-wider"
+                                className="px-6 py-2.5 bg-[#0c7c40] hover:bg-[#096333] text-white font-semibold text-xs md:text-sm rounded-lg transition-all shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 cursor-pointer uppercase tracking-wider"
                             >
                                 {isSubmitting ? (
                                     <>

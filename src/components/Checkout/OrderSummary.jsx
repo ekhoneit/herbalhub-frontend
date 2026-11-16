@@ -269,7 +269,7 @@ const OrderSummary = ({
                     onClick={() => onSelectVariant(item, v)}
                     className={`px-2 py-1 rounded-md text-[11px] font-medium border transition cursor-pointer flex items-center gap-1.5 ${
                       isSelected
-                        ? "bg-[#F45116] text-white border-[#F45116] shadow-xs font-bold"
+                        ? "bg-[#0c7c40] text-white border-[#0c7c40] shadow-xs font-bold"
                         : "bg-white text-slate-700 border-slate-200 hover:border-slate-300"
                     }`}
                   >
@@ -312,7 +312,7 @@ const OrderSummary = ({
                 return (
                   <span
                     key={key}
-                    className="inline-flex items-center gap-1.5 text-[11px] bg-orange-50 text-[#F45116] border border-orange-200/60 px-2 py-0.5 rounded font-medium"
+                    className="inline-flex items-center gap-1.5 text-[11px] bg-orange-50 text-[#0c7c40] border border-orange-200/60 px-2 py-0.5 rounded font-medium"
                   >
                     {isHex && (
                       <span
@@ -346,7 +346,7 @@ const OrderSummary = ({
     return (
       <div className="sticky top-6">
         <h2 className="text-lg md:text-2xl font-bold mb-6 text-gray-900 flex items-center gap-2">
-          <ShoppingBag className="text-[#F45116]" size={22} />
+          <ShoppingBag className="text-[#0c7c40]" size={22} />
           <span>Your Order</span>
         </h2>
         <div className="border border-gray-200 rounded-2xl p-6 bg-white shadow-xs">
@@ -362,7 +362,7 @@ const OrderSummary = ({
   const renderProductsSection = () => (
     <div className="order-1">
       <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-900 flex items-center gap-2">
-        <ShoppingBag className="text-[#F45116]" size={22} />
+        <ShoppingBag className="text-[#0c7c40]" size={22} />
         <span>Your Order</span>
       </h2>
       <div className="border border-gray-200 rounded-2xl p-4 sm:p-6 bg-white shadow-xs mb-6">
@@ -442,7 +442,7 @@ const OrderSummary = ({
                       {renderVariantSection(item)}
                       {item.campaignName && (
                         <div className="flex items-center gap-1.5 flex-wrap mt-1">
-                          <span className="inline-block text-[10px] bg-orange-100 text-[#F45116] px-2 py-0.5 rounded-md font-medium">
+                          <span className="inline-block text-[10px] bg-orange-100 text-[#0c7c40] px-2 py-0.5 rounded-md font-medium">
                             {item.campaignName}
                           </span>
                         </div>
@@ -481,7 +481,7 @@ const OrderSummary = ({
                       )}
 
                       <div className="flex items-center gap-1.5 flex-wrap justify-end">
-                        <span className="font-bold text-[#F45116] text-xs sm:text-sm">
+                        <span className="font-bold text-[#0c7c40] text-xs sm:text-sm">
                           {renderPrice(currentPrice * quantity)}
                         </span>
                         {originalPrice > currentPrice && (
@@ -506,7 +506,7 @@ const OrderSummary = ({
       {/* Summary Section */}
       <div className="bg-white p-4 sm:p-5 rounded-2xl space-y-3 border border-gray-200 shadow-xs">
         <h3 className="font-bold text-lg mb-3 flex items-center gap-2 text-gray-900">
-          <Receipt className="text-[#F45116]" size={20} />
+          <Receipt className="text-[#0c7c40]" size={20} />
           <span>Order Summary</span>
         </h3>
 
@@ -523,7 +523,7 @@ const OrderSummary = ({
         {orderBumpItem && (
           <div className="flex justify-between items-center text-sm text-slate-700 bg-amber-50/60 px-2 py-1 rounded-md border border-amber-200/60">
             <span className="flex items-center gap-1.5 truncate max-w-[200px] text-xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#F45116]"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0c7c40]"></span>
               <span className="font-semibold truncate">Order Bump: {orderBumpItem.productName}</span>
             </span>
             <span className="font-bold text-gray-900 shrink-0 text-xs">
@@ -568,10 +568,10 @@ const OrderSummary = ({
 
         <div className="border-t-2 border-gray-100 pt-3 mt-3 flex justify-between items-center text-lg font-bold">
           <span className="flex items-center gap-2 text-gray-900">
-            <CreditCard size={18} className="text-[#F45116]" />
+            <CreditCard size={18} className="text-[#0c7c40]" />
             Grand Total
           </span>
-          <span className="text-[#F45116] text-xl font-extrabold">
+          <span className="text-[#0c7c40] text-xl font-extrabold">
             {renderPrice(totals.finalTotal)}
           </span>
         </div>
@@ -584,8 +584,8 @@ const OrderSummary = ({
             onClick={() => setTermsAgreed(!termsAgreed)}
             className={`mt-0.5 w-5 h-5 rounded-full flex items-center justify-center transition-colors shrink-0 cursor-pointer ${
               termsAgreed
-                ? "bg-[#F45116] border border-[#F45116]"
-                : "bg-white border border-gray-300 hover:border-[#F45116]"
+                ? "bg-[#0c7c40] border border-[#0c7c40]"
+                : "bg-white border border-gray-300 hover:border-[#0c7c40]"
             }`}
           >
             {termsAgreed && <FiCheck className="text-white text-[12px] stroke-[3]" />}
@@ -595,7 +595,7 @@ const OrderSummary = ({
             <Link
               href="/terms"
               target="_blank"
-              className="text-[#F45116] hover:underline font-medium"
+              className="text-[#0c7c40] hover:underline font-medium"
             >
               Terms and Conditions
             </Link>
@@ -603,7 +603,7 @@ const OrderSummary = ({
             <Link
               href="/privacy-policy"
               target="_blank"
-              className="text-[#F45116] hover:underline font-medium"
+              className="text-[#0c7c40] hover:underline font-medium"
             >
               Privacy Policy
             </Link>{" "}
@@ -611,7 +611,7 @@ const OrderSummary = ({
             <Link
               href="/return-policy"
               target="_blank"
-              className="text-[#F45116] hover:underline font-medium"
+              className="text-[#0c7c40] hover:underline font-medium"
             >
               Refund Policy
             </Link>
@@ -626,7 +626,7 @@ const OrderSummary = ({
         type="button"
         onClick={() => placeOrderRef?.current && placeOrderRef.current()}
         disabled={loading || !termsAgreed}
-        className="w-full mt-6 py-3.5 bg-[#F45116] hover:bg-[#D9400B] text-white rounded-xl font-bold text-base md:text-lg transition-all shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer uppercase tracking-wider flex items-center justify-center gap-2"
+        className="w-full mt-6 py-3.5 bg-[#0c7c40] hover:bg-[#096333] text-white rounded-xl font-bold text-base md:text-lg transition-all shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer uppercase tracking-wider flex items-center justify-center gap-2"
       >
         {loading ? (
           <>
@@ -645,7 +645,7 @@ const OrderSummary = ({
             type="button"
             onClick={() => placeOrderRef?.current && placeOrderRef.current()}
             disabled={loading || !termsAgreed}
-            className="w-full py-3.5 bg-[#F45116] hover:bg-[#D9400B] text-white rounded-xl font-bold text-base transition-all shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer uppercase tracking-wide flex items-center justify-center gap-2"
+            className="w-full py-3.5 bg-[#0c7c40] hover:bg-[#096333] text-white rounded-xl font-bold text-base transition-all shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer uppercase tracking-wide flex items-center justify-center gap-2"
           >
             {loading ? (
               <>

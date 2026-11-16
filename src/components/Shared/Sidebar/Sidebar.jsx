@@ -65,7 +65,7 @@ const Sidebar = () => {
             text: 'Are you sure you want to logout?',
             icon: 'question',
             showCancelButton: true,
-            confirmButtonColor: '#F45116',
+            confirmButtonColor: '#0c7c40',
             cancelButtonColor: '#6b7280',
             confirmButtonText: 'Yes, logout',
             cancelButtonText: 'Cancel'
@@ -83,7 +83,7 @@ const Sidebar = () => {
                     icon: 'error',
                     title: 'Error',
                     text: 'Failed to logout. Please try again.',
-                    confirmButtonColor: '#F45116'
+                    confirmButtonColor: '#0c7c40'
                 });
             } finally {
                 setIsLoggingOut(false);
@@ -113,7 +113,7 @@ const Sidebar = () => {
     return (
         <div className="w-full bg-white rounded-[12px] shadow-[0_4px_20px_rgba(0,0,0,0.05)] p-4 md:p-6 flex flex-col font-outfit border border-gray-100">
             {/* User Profile Section */}
-            <div className="flex items-center gap-3 p-4 bg-[#F45116]/5 rounded-[12px] mb-6 flex-shrink-0">
+            <div className="flex items-center gap-3 p-4 bg-[#0c7c40]/5 rounded-[12px] mb-6 flex-shrink-0">
                 {loading ? (
                     <>
                         <div className="w-12 h-12 bg-gray-200 rounded-full animate-pulse"></div>
@@ -125,7 +125,7 @@ const Sidebar = () => {
                 ) : (
                     <>
                         {getAvatarUrl() ? (
-                            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#F45116]/20">
+                            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#0c7c40]/20">
                                 <img
                                     src={getAvatarUrl()}
                                     alt={getDisplayName()}
@@ -135,12 +135,12 @@ const Sidebar = () => {
                                         e.target.nextElementSibling.style.display = 'flex';
                                     }}
                                 />
-                                <div className="w-12 h-12 bg-[#F45116] text-white rounded-full items-center justify-center hidden">
+                                <div className="w-12 h-12 bg-[#0c7c40] text-white rounded-full items-center justify-center hidden">
                                     <span className="font-bold text-lg">{getUserInitials()}</span>
                                 </div>
                             </div>
                         ) : (
-                            <div className="w-12 h-12 bg-[#F45116] text-white rounded-full flex items-center justify-center">
+                            <div className="w-12 h-12 bg-[#0c7c40] text-white rounded-full flex items-center justify-center">
                                 <span className="font-bold text-lg">{getUserInitials()}</span>
                             </div>
                         )}
@@ -169,11 +169,11 @@ const Sidebar = () => {
                             href={item.path}
                             className={`w-full flex items-center gap-3 px-4 py-3 rounded-[6px] transition-all duration-200 ${
                                 active
-                                    ? 'bg-[#F45116] text-white shadow-sm font-semibold'
-                                    : 'bg-white hover:bg-[#F45116]/5 hover:text-[#F45116] text-gray-700'
+                                    ? 'bg-[#0c7c40] text-white shadow-sm font-semibold'
+                                    : 'bg-white hover:bg-[#0c7c40]/5 hover:text-[#0c7c40] text-gray-700'
                             }`}
                         >
-                            <Icon className={`w-[18px] h-[18px] ${active ? 'text-white' : 'text-gray-500 group-hover:text-[#F45116]'}`} />
+                            <Icon className={`w-[18px] h-[18px] ${active ? 'text-white' : 'text-gray-500 group-hover:text-[#0c7c40]'}`} />
                             <span className="text-sm font-medium">
                                 {item.label}
                             </span>
