@@ -132,7 +132,7 @@ const MyAccount = () => {
           My Account
         </h1>
         <div>
-          {user?.email_confirmed_at ? (
+          {user?.email_confirmed_at || user?.emailVerified ? (
             <span className="text-[#137333] text-xs font-semibold px-3 py-1 bg-[#E6F4EA] border border-[#A3E2B8] rounded-full">
               ✓ Verified
             </span>
