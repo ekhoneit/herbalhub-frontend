@@ -41,16 +41,51 @@ const VerifyOtp = () => {
     }, [timer]);
 
     const handleOtpChange = (index, value) => {
-        if (isNaN(value)) return;
+        const cleaned = value.replace(/\D/g, "");
+        if (!cleaned) {
+            const newOtp = [...otp];
+            newOtp[index] = "";
+            setOtp(newOtp);
+            return;
+        }
+
+        if (cleaned.length > 1) {
+            handlePasteDirect(cleaned, index);
+            return;
+        }
 
         const newOtp = [...otp];
-        newOtp[index] = value;
+        newOtp[index] = cleaned;
         setOtp(newOtp);
 
         // Auto-focus next input for 6-digit OTP
-        if (value && index < 5) {
+        if (index < 5) {
             document.getElementById(`otp-${index + 1}`)?.focus();
         }
+    };
+
+    const handlePasteDirect = (pastedText, startIndex = 0) => {
+        const digits = pastedText.replace(/\D/g, "").slice(0, 6).split("");
+        if (digits.length === 0) return;
+
+        const newOtp = [...otp];
+        for (let i = 0; i < 6; i++) {
+            if (i >= startIndex && digits[i - startIndex] !== undefined) {
+                newOtp[i] = digits[i - startIndex];
+            } else if (startIndex === 0 && digits[i] !== undefined) {
+                newOtp[i] = digits[i];
+            }
+        }
+        setOtp(newOtp);
+
+        const nextFocusIndex = Math.min(startIndex + digits.length, 5);
+        document.getElementById(`otp-${nextFocusIndex}`)?.focus();
+    };
+
+    const handlePaste = (e, index) => {
+        e.preventDefault();
+        const pastedData = e.clipboardData.getData("text");
+        handlePasteDirect(pastedData, index);
     };
 
     const handleKeyDown = (index, e) => {
@@ -160,10 +195,12 @@ const VerifyOtp = () => {
                                     key={index}
                                     id={`otp-${index}`}
                                     type="text"
-                                    maxLength={1}
+                                    inputMode="numeric"
+                                    maxLength={6}
                                     value={digit}
                                     onChange={(e) => handleOtpChange(index, e.target.value)}
                                     onKeyDown={(e) => handleKeyDown(index, e)}
+                                    onPaste={(e) => handlePaste(e, index)}
                                     disabled={isLoading}
                                     className="w-11 h-12 sm:w-12 sm:h-13 text-center text-xl font-bold bg-gray-50/50 border border-gray-200 rounded-[6px] text-gray-900 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors disabled:bg-gray-100"
                                 />
