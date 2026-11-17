@@ -51,7 +51,7 @@ export default async function Footer() {
   const {
     address = "Uttar Brindabon para, bogura",
     phone_number = "01969968555",
-    primary_email = "info@herbalhub.com",
+    primary_email = "info@herbalhubbd.com",
     description = "Herbalhub is your destination for authentic fashion, wearables, and premium lifestyle essentials in Bangladesh.",
     facebook,
     instagram,

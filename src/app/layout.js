@@ -125,7 +125,18 @@ export async function generateMetadata() {
   };
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  let dynamicGtmId = GTM_ID;
+  try {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+    const res = await fetch(`${apiUrl}/api/store-settings`, { next: { revalidate: 30 } });
+    if (res.ok) {
+      const data = await res.json();
+      if (data?.data?.gtmId?.trim()) {
+        dynamicGtmId = data.data.gtmId.trim();
+      }
+    }
+  } catch (_) {}
   const organizationSchema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -173,7 +184,7 @@ export default function RootLayout({ children }) {
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${GTM_ID}');`,
+})(window,document,'script','dataLayer','${dynamicGtmId}');`,
           }}
         />
         <script id="ld-json"
@@ -182,7 +193,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
         <noscript>
           <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            src={`https://www.googletagmanager.com/ns.html?id=${dynamicGtmId}`}
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}

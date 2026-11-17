@@ -23,7 +23,10 @@ import Swal from "sweetalert2";
 import Image from "next/image";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { calculateDeliveryCharges } from "@/lib/deliveryCharge";
-import { sendAbandonedOrderBeacon, sendAbandonedOrderCall } from "@/lib/abandonedOrderTracker";
+import {
+  sendAbandonedOrderBeacon,
+  sendAbandonedOrderCall,
+} from "@/lib/abandonedOrderTracker";
 
 const BillingDetails = ({
   user = null,
@@ -235,10 +238,17 @@ const BillingDetails = ({
       // Send to BizMation failed/abandoned orders API immediately once phone number is filled,
       // and re-send/update if address is also typed (debounced 1.5s)
       const currentAddressSnapshot = fullAddr.trim();
-      const shouldTrigger = !abandonedSentRef.current || (currentAddressSnapshot.length >= 5 && currentAddressSnapshot !== lastSentAddressRef.current);
+      const shouldTrigger =
+        !abandonedSentRef.current ||
+        (currentAddressSnapshot.length >= 5 &&
+          currentAddressSnapshot !== lastSentAddressRef.current);
 
       const timer = setTimeout(() => {
-        if (abandonmentDataRef.current && shouldTrigger && !(typeof window !== "undefined" && window.__herbalhub_order_placed__)) {
+        if (
+          abandonmentDataRef.current &&
+          shouldTrigger &&
+          !(typeof window !== "undefined" && window.__herbalhub_order_placed__)
+        ) {
           abandonedSentRef.current = true;
           lastSentAddressRef.current = currentAddressSnapshot;
           sendAbandonedOrderCall(abandonmentDataRef.current);
@@ -450,7 +460,7 @@ const BillingDetails = ({
       const emailToUse = (
         user?.email ||
         formData.email ||
-        (cleanPhone ? `guest_${cleanPhone}@herbalhub.com` : "")
+        (cleanPhone ? `guest_${cleanPhone}@herbalhubbd.com` : "")
       ).trim();
       const recipientName = (
         formData.recipientName ||
@@ -514,7 +524,8 @@ const BillingDetails = ({
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             fullName: recipientName || "Guest Customer",
-            email: emailToUse || `guest_${cleanPhone || Date.now()}@herbalhub.com`,
+            email:
+              emailToUse || `guest_${cleanPhone || Date.now()}@herbalhubbd.com`,
             phone: cleanPhone,
             status: true,
           }),
