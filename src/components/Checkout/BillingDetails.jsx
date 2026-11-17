@@ -1052,70 +1052,40 @@ const BillingDetails = ({
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 text-gray-900">
-              <div>
-                <label className="block mb-1 text-xs md:text-sm font-medium text-gray-900">
-                  Email Address{" "}
-                  <span className="text-gray-400 font-normal text-xs">
-                    (Optional)
-                  </span>
-                </label>
-                <input
-                  type="email"
-                  {...register("email", {
-                    validate: (value) => {
-                      if (!value || value.trim() === "") return true;
-                      return (
-                        /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
-                          value.trim(),
-                        ) || "Invalid email address"
-                      );
-                    },
-                  })}
-                  placeholder="your@email.com"
-                  className="w-full text-xs md:text-sm placeholder:text-xs md:placeholder:text-sm px-3 md:px-4 py-2.5 h-10 md:h-11 border border-gray-200 rounded-[8px] focus:outline-none focus:ring-1 focus:ring-[#0c7c40] focus:border-[#0c7c40] transition-all bg-white text-gray-900"
-                />
-                {errors.email && (
-                  <p className="text-red-500 text-xs md:text-sm mt-1">
-                    {errors.email.message}
-                  </p>
-                )}
-              </div>
-              <div>
-                <label className="block mb-1 font-medium text-xs md:text-sm text-gray-900">
-                  Address Type
-                </label>
-                <div className="grid grid-cols-3 gap-1.5 h-10 md:h-11">
-                  {[
-                    { value: "Home", label: "Home", icon: Home },
-                    { value: "Office", label: "Office", icon: Briefcase },
-                    { value: "Other", label: "Other", icon: MapPin },
-                  ].map(({ value, label, icon: Icon }) => {
-                    const isSelected = (watchType || "Home") === value;
-                    return (
-                      <button
-                        key={value}
-                        type="button"
-                        onClick={() =>
-                          setValue("type", value, { shouldDirty: true })
+            <div>
+              <label className="block mb-1 font-medium text-xs md:text-sm text-gray-900">
+                Address Type
+              </label>
+              <div className="grid grid-cols-3 gap-1.5 h-10 md:h-11">
+                {[
+                  { value: "Home", label: "Home", icon: Home },
+                  { value: "Office", label: "Office", icon: Briefcase },
+                  { value: "Other", label: "Other", icon: MapPin },
+                ].map(({ value, label, icon: Icon }) => {
+                  const isSelected = (watchType || "Home") === value;
+                  return (
+                    <button
+                      key={value}
+                      type="button"
+                      onClick={() =>
+                        setValue("type", value, { shouldDirty: true })
+                      }
+                      className={`flex items-center justify-center gap-1.5 px-2 py-2 rounded-[8px] border text-xs md:text-sm transition-all cursor-pointer ${
+                        isSelected
+                          ? "border-[#0c7c40] bg-[#0c7c40]/10 text-[#0c7c40] font-bold shadow-xs"
+                          : "border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
+                      }`}
+                    >
+                      <Icon
+                        size={14}
+                        className={
+                          isSelected ? "text-[#0c7c40]" : "text-gray-400"
                         }
-                        className={`flex items-center justify-center gap-1.5 px-2 py-2 rounded-[8px] border text-xs md:text-sm transition-all cursor-pointer ${
-                          isSelected
-                            ? "border-[#0c7c40] bg-[#0c7c40]/10 text-[#0c7c40] font-bold shadow-xs"
-                            : "border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
-                        }`}
-                      >
-                        <Icon
-                          size={14}
-                          className={
-                            isSelected ? "text-[#0c7c40]" : "text-gray-400"
-                          }
-                        />
-                        <span>{label}</span>
-                      </button>
-                    );
-                  })}
-                </div>
+                      />
+                      <span>{label}</span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
