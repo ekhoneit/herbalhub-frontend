@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import toast from "react-hot-toast";
+import { trackAddToCart, trackRemoveFromCart } from "@/utils/dataLayer";
 
 const CART_STORAGE_KEY = "herbalhub_cart";
 const BUY_NOW_KEY = "herbalhub_buy_now_item";
@@ -93,6 +94,14 @@ export const useCart = () => {
             localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(localCart));
             setCart(localCart);
             window.dispatchEvent(new CustomEvent("cartUpdated"));
+
+            // Track add_to_cart event in DataLayer for GTM / Meta Pixel
+            try {
+                trackAddToCart(cartItem, quantity);
+            } catch (e) {
+                console.warn("[DataLayer] Add to cart track warning:", e);
+            }
+
             toast.success("Added to cart!");
             return true;
         } catch (err) {
@@ -186,10 +195,17 @@ export const useCart = () => {
             const stored = localStorage.getItem(CART_STORAGE_KEY);
             const localCart = stored ? JSON.parse(stored) : [];
             if (index >= 0 && index < localCart.length) {
+                const removedItem = localCart[index];
                 localCart.splice(index, 1);
                 localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(localCart));
                 setCart(localCart);
                 window.dispatchEvent(new CustomEvent("cartUpdated"));
+
+                // Track remove_from_cart event in DataLayer
+                try {
+                    trackRemoveFromCart(removedItem);
+                } catch (e) {}
+
                 toast.success("Removed from cart");
             }
         } catch (_) {}
