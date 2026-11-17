@@ -4,7 +4,7 @@ import RelatedProductsSlider from "@/components/Products/RelatedProductsSlider";
 import ProductCardSkeleton from "@/components/Shared/ProductCardSkeleton";
 import { notFound } from "next/navigation";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.herbalhub.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://herbalhubbd.com";
 
 // 1. Dynamic SEO Metadata with OpenGraph and Twitter cards
 export async function generateMetadata({ params }) {

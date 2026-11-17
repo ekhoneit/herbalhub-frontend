@@ -44,7 +44,7 @@ import ScrollToTop from "@/components/Shared/ScrollToTop";
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-NHMQHJNC";
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://www.herbalhub.com";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://herbalhubbd.com";
 
 export async function generateMetadata() {
   let faviconUrl = "/herbalhub-favicon.png";

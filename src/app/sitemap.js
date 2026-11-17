@@ -1,7 +1,7 @@
 import { apiClient } from "@/lib/apiClient";
 
 export default async function sitemap() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.herbalhub.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://herbalhubbd.com';
 
   const staticPages = [
     {
