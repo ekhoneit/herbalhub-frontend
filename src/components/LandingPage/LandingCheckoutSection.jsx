@@ -508,8 +508,17 @@ export default function LandingCheckoutSection({
         const orderNum =
           orderData.orderNumber || response.orderNumber || response.id;
 
-        // Track purchase event in DataLayer
-        trackPurchase(orderData, orderItemsPayload);
+        // Track purchase event in DataLayer with customer data
+        trackPurchase(
+          {
+            ...orderData,
+            recipientName: fullName.trim(),
+            phoneNumber: cleanPhone,
+            address: address.trim(),
+            city: selectedDistrict || "Dhaka",
+          },
+          orderItemsPayload
+        );
 
         toast.success("আপনার অর্ডারটি সফলভাবে সম্পন্ন হয়েছে!", { id: toastId });
         setOrderSuccess({

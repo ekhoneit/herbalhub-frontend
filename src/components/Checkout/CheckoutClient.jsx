@@ -599,8 +599,17 @@ export default function CheckoutClient({ initialContact = null }) {
         window.__herbalhub_order_placed__ = true;
       }
 
-      // Track purchase event in DataLayer with real transaction/order data (deduplicated)
-      trackPurchase(orderData, items);
+      // Track purchase event in DataLayer with real transaction & customer data (deduplicated)
+      trackPurchase(
+        {
+          ...orderData,
+          recipientName: data.recipientName || orderData.recipientName,
+          phoneNumber: data.phoneNumber || orderData.phoneNumber,
+          address: data.address || orderData.address,
+          city: data.district || orderData.district,
+        },
+        items
+      );
 
       if (typeof window !== "undefined") {
         try {

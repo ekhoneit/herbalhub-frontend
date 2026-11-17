@@ -563,10 +563,28 @@ export const trackPurchase = (orderData, fallbackItems = [], currency = DEFAULT_
     );
   }
 
+  // Extract Customer Data for Meta Pixel / GTM Advanced Matching
+  const customerPhone = orderData.phoneNumber || orderData.phone || orderData.customer?.phone || orderData.customerPhone || '';
+  const customerName = orderData.recipientName || orderData.fullName || orderData.customer?.fullName || orderData.name || '';
+  const customerEmail = orderData.customerEmail || orderData.email || orderData.customer?.email || '';
+  const customerAddress = orderData.address || orderData.shippingAddress || '';
+  const customerCity = orderData.city || orderData.district || 'Dhaka';
+
+  const customerData = {};
+  if (customerName) customerData.name = customerName;
+  if (customerPhone) customerData.phone = customerPhone;
+  if (customerEmail && !customerEmail.includes('guest_')) customerData.email = customerEmail;
+  if (customerAddress) customerData.address = customerAddress;
+  if (customerCity) customerData.city = customerCity;
+
   pushToDataLayer(
     {
       event: 'purchase',
       ecommerce: ecommercePayload,
+      ...(Object.keys(customerData).length > 0 && {
+        customer_data: customerData,
+        user_data: customerData,
+      }),
     },
     true
   );
