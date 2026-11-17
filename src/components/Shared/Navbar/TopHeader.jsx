@@ -16,108 +16,54 @@ export default function TopHeader({ contactData }) {
   const contact = contactData?.data || contactData || {};
   const phone = contact?.phone_number || "01969968555";
 
-  const [location, setLocation] = useState("Locating...");
-  const [isLocating, setIsLocating] = useState(true);
+  const [location, setLocation] = useState("Bangladesh");
+  const [isLocating, setIsLocating] = useState(false);
   const [language, setLanguage] = useState("EN"); // 'BN' | 'EN'
   const [currency, setCurrency] = useState("BDT ৳");
 
   const [isLangOpen, setIsLangOpen] = useState(false);
   const langRef = useRef(null);
 
-  // Automatically locate customer's city and postal code
+  // Silent IP-based location detection without browser GPS popup
   useEffect(() => {
     let isMounted = true;
 
-    const autoDetectLocation = async () => {
+    const detectLocationQuietly = async () => {
       // Check cache first in session
       try {
         const cachedLoc = sessionStorage.getItem("user_detected_location");
         if (cachedLoc) {
           if (isMounted) {
             setLocation(cachedLoc);
-            setIsLocating(false);
           }
           return;
         }
       } catch (_) {}
 
-      // Try HTML5 Geolocation reverse geocoding with OpenStreetMap Nominatim
-      if (typeof window !== "undefined" && "geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(
-          async (position) => {
-            try {
-              const { latitude, longitude } = position.coords;
-              const res = await fetch(
-                `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`,
-              );
-              if (res.ok) {
-                const data = await res.json();
-                const addr = data?.address || {};
-                const city =
-                  addr.city ||
-                  addr.town ||
-                  addr.suburb ||
-                  addr.state_district ||
-                  addr.county ||
-                  "Dhaka";
-                const postcode = addr.postcode || "";
-                const formatted = postcode ? `${city} ${postcode}` : city;
-
-                if (isMounted) {
-                  setLocation(formatted);
-                  setIsLocating(false);
-                  try {
-                    sessionStorage.setItem("user_detected_location", formatted);
-                  } catch (_) {}
-                }
-                return;
-              }
-            } catch (err) {
-              console.warn("Geolocation reverse geocoding error:", err);
-            }
-            fetchIpLocation();
-          },
-          (error) => {
-            // User denied or error -> fallback to IP geolocation
-            fetchIpLocation();
-          },
-          { timeout: 5000 },
-        );
-      } else {
-        fetchIpLocation();
-      }
-    };
-
-    // Fallback IP Geolocation via ipapi.co
-    const fetchIpLocation = async () => {
+      // Pure IP lookup (100% silent, never asks user permission)
       try {
         const res = await fetch("https://ipapi.co/json/");
         if (res.ok) {
           const data = await res.json();
           const city = data.city || "Dhaka";
           const postal = data.postal || "";
-          const formatted = postal ? `${city} ${postal}` : `${city} 1209`;
+          const formatted = postal ? `${city} ${postal}` : city;
           if (isMounted) {
             setLocation(formatted);
-            setIsLocating(false);
             try {
               sessionStorage.setItem("user_detected_location", formatted);
             } catch (_) {}
           }
-          return;
         }
       } catch (e) {
-        console.warn("IP Geolocation error:", e);
-      }
-
-      // Ultimate safe fallback
-      if (isMounted) {
-        setLocation("Dhaka 1209");
-        setIsLocating(false);
+        // Fallback default
+        if (isMounted) {
+          setLocation("Dhaka 1205");
+        }
       }
     };
 
-    autoDetectLocation();
+    detectLocationQuietly();
 
     return () => {
       isMounted = false;
