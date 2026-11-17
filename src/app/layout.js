@@ -173,7 +173,7 @@ export default async function RootLayout({ children }) {
         name: "Herbalhub",
         url: SITE_URL,
         logo: `${SITE_URL}/herbalhub.png`,
-        sameAs: ["https://www.facebook.com/herbalhubecommerce"],
+        sameAs: ["https://www.facebook.com/herbalhubofficial"],
       },
     ],
   };
