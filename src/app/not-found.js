@@ -37,12 +37,12 @@ export default async function NotFound() {
 
     // Default fallback categories if database returns empty
     const displayCategories = categories.length > 0 ? categories : [
-        { id: 1, name: "Electronics & Gadget" },
-        { id: 2, name: "Fashion" },
-        { id: 3, name: "Appliances" },
-        { id: 4, name: "Mobiles & Tablets" },
-        { id: 5, name: "Kitchen & Dining" },
-        { id: 6, name: "Personal Care" }
+        { id: 1, name: "Diabetes Care" },
+        { id: 2, name: "Natural Supplement" },
+        { id: 3, name: "Healthy Foods" },
+        { id: 4, name: "Immunity Booster" },
+        { id: 5, name: "Herbal Remedies" },
+        { id: 6, name: "Daily Wellness" }
     ];
 
     return (

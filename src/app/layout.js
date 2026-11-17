@@ -1,4 +1,9 @@
-import { Inter, Manrope, Hind_Siliguri, Plus_Jakarta_Sans } from "next/font/google";
+import {
+  Inter,
+  Manrope,
+  Hind_Siliguri,
+  Plus_Jakarta_Sans,
+} from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 
@@ -36,15 +41,18 @@ import PromotionalPopup from "@/components/Shared/PromotionalPopup";
 import ThemeColorInjector from "@/components/Shared/ThemeColorInjector";
 import ScrollToTop from "@/components/Shared/ScrollToTop";
 
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-KWBMNVPM';
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-NHMQHJNC";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.herbalhub.com';
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.herbalhub.com";
 
 export async function generateMetadata() {
   let faviconUrl = "/herbalhub-favicon.png";
   try {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-    const res = await fetch(`${apiUrl}/api/store-settings`, { next: { revalidate: 30 } });
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+    const res = await fetch(`${apiUrl}/api/store-settings`, {
+      next: { revalidate: 30 },
+    });
     if (res.ok) {
       const data = await res.json();
       if (data?.data?.favicon) {
@@ -58,24 +66,26 @@ export async function generateMetadata() {
   return {
     metadataBase: new URL(SITE_URL),
     title: {
-      default: "Herbalhub | Authentic Online Shopping in Bangladesh",
+      default: "Herbalhub | 100% Pure Organic & Herbal Care in Bangladesh",
       template: "%s | Herbalhub",
     },
-    description: "Herbalhub is the best online shopping destination in Bangladesh. Shop 100% authentic electronics, fashion, lifestyle products, home essentials & accessories at the best prices with cash on delivery and fast nationwide delivery.",
+    description:
+      "Herbalhub is Bangladesh's trusted herbal & ayurvedic destination. Shop 100% authentic natural health supplements, sugar care, organic food, dietary nutrition & herbal wellness solutions with cash on delivery and fast nationwide shipping.",
     keywords: [
       "herbalhub",
       "herbalhub bd",
-      "herbalhub.xyz",
+      "herbalhubbd.com",
       "herbalhub online shop",
-      "Herbalhub - Best Online Shopping Experience",
-      "online shopping bangladesh",
-      "best online shopping site",
-      "buy online bangladesh",
-      "authentic products bangladesh",
-      "electronics online shopping bd",
-      "fashion online shop bd",
-      "cash on delivery bangladesh",
-      "fast delivery online shop bd",
+      "herbal products in bangladesh",
+      "ayurvedic medicine bangladesh",
+      "diabetes sugar care herbal",
+      "dia 3 herbal care",
+      "natural supplements bd",
+      "organic food bangladesh",
+      "herbal wellness online bd",
+      "pure herbal shop bangladesh",
+      "cash on delivery herbal products",
+      "fast delivery bangladesh",
     ],
     authors: [{ name: "Herbalhub", url: SITE_URL }],
     creator: "Herbalhub",
@@ -100,21 +110,23 @@ export async function generateMetadata() {
       locale: "en_BD",
       url: SITE_URL,
       siteName: "Herbalhub",
-      title: "Herbalhub | Authentic Online Shopping in Bangladesh",
-      description: "Discover genuine electronics, fashion, and lifestyle products with express delivery nationwide across Bangladesh.",
+      title: "Herbalhub | 100% Pure Organic & Herbal Care in Bangladesh",
+      description:
+        "Discover 100% authentic herbal wellness products, natural health supplements, diabetes care, and organic nutrition with express nationwide delivery across Bangladesh.",
       images: [
         {
           url: "/herbalhub.png",
           width: 1200,
           height: 630,
-          alt: "Herbalhub - Best Online Shopping Experience",
+          alt: "Herbalhub - Pure Herbal & Natural Wellness in Bangladesh",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Herbalhub | Authentic Online Shopping in Bangladesh",
-      description: "Discover genuine electronics, fashion, and lifestyle products with express delivery nationwide across Bangladesh.",
+      title: "Herbalhub | 100% Pure Organic & Herbal Care in Bangladesh",
+      description:
+        "Discover 100% authentic herbal wellness products, natural health supplements, diabetes care, and organic nutrition with express nationwide delivery across Bangladesh.",
       images: ["/herbalhub.png"],
     },
     icons: {
@@ -128,8 +140,10 @@ export async function generateMetadata() {
 export default async function RootLayout({ children }) {
   let dynamicGtmId = GTM_ID;
   try {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-    const res = await fetch(`${apiUrl}/api/store-settings`, { next: { revalidate: 30 } });
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+    const res = await fetch(`${apiUrl}/api/store-settings`, {
+      next: { revalidate: 30 },
+    });
     if (res.ok) {
       const data = await res.json();
       if (data?.data?.gtmId?.trim()) {
@@ -143,39 +157,44 @@ export default async function RootLayout({ children }) {
       {
         "@type": "WebSite",
         "@id": `${SITE_URL}/#website`,
-        "url": SITE_URL,
-        "name": "Herbalhub | Authentic Online Shopping in Bangladesh",
-        "description": "Herbalhub is Bangladesh's top e-commerce platform offering 100% authentic products with fast delivery nationwide.",
-        "potentialAction": {
+        url: SITE_URL,
+        name: "Herbalhub | 100% Pure Organic & Herbal Care in Bangladesh",
+        description:
+          "Herbalhub is Bangladesh's trusted herbal & ayurvedic destination offering 100% authentic natural health supplements, diabetes care, and organic food with fast delivery nationwide.",
+        potentialAction: {
           "@type": "SearchAction",
-          "target": `${SITE_URL}/search?q={search_term_string}`,
-          "query-input": "required name=search_term_string"
-        }
+          target: `${SITE_URL}/search?q={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
       },
       {
         "@type": "Organization",
         "@id": `${SITE_URL}/#organization`,
-        "name": "Herbalhub",
-        "url": SITE_URL,
-        "logo": `${SITE_URL}/herbalhub.png`,
-        "sameAs": [
-          "https://www.facebook.com/herbalhubecommerce",
-        ]
-      }
-    ]
+        name: "Herbalhub",
+        url: SITE_URL,
+        logo: `${SITE_URL}/herbalhub.png`,
+        sameAs: ["https://www.facebook.com/herbalhubecommerce"],
+      },
+    ],
   };
 
   return (
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className={`${plusJakartaSans.variable} ${inter.variable} ${manrope.variable} ${hindSiliguri.variable} antialiased min-h-screen flex flex-col bg-white text-slate-800`}>
+      <body
+        className={`${plusJakartaSans.variable} ${inter.variable} ${manrope.variable} ${hindSiliguri.variable} antialiased min-h-screen flex flex-col bg-white text-slate-800`}
+      >
         <Script
           id="google-tag-manager"
           strategy="afterInteractive"
@@ -187,9 +206,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','${dynamicGtmId}');`,
           }}
         />
-        <script id="ld-json"
+        <script
+          id="ld-json"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
         />
         <noscript>
           <iframe
