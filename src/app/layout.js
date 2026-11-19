@@ -150,6 +150,9 @@ export default async function RootLayout({ children }) {
       if (data?.data?.gtmId?.trim()) {
         dynamicGtmId = data.data.gtmId.trim();
       }
+      if (data?.data?.pixelId?.trim()) {
+        dynamicPixelId = data.data.pixelId.trim();
+      }
     }
   } catch (_) {}
   const organizationSchema = {
