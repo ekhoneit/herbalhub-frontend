@@ -139,6 +139,7 @@ export async function generateMetadata() {
 
 export default async function RootLayout({ children }) {
   let dynamicGtmId = GTM_ID;
+  let dynamicPixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID || "";
   try {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
     const res = await fetch(`${apiUrl}/api/store-settings`, {
