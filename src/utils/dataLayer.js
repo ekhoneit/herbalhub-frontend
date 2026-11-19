@@ -29,6 +29,54 @@ export const pushToDataLayer = (payload, isEcommerce = false) => {
 
     window.dataLayer.push(payload);
 
+    // Direct Meta Pixel (fbq) bridge to guarantee extension/browser tracking
+    if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+      try {
+        const ev = payload.event;
+        if (ev === 'page_view') {
+          window.fbq('track', 'PageView');
+        } else if (ev === 'view_item') {
+          const item = payload.ecommerce?.items?.[0] || {};
+          window.fbq('track', 'ViewContent', {
+            content_type: 'product',
+            content_ids: [String(item.item_id || item.id || '')],
+            content_name: String(item.item_name || item.name || ''),
+            content_category: String(item.item_category || 'Health & Beauty'),
+            value: Number(payload.ecommerce?.value || item.price || 0),
+            currency: String(payload.ecommerce?.currency || 'BDT')
+          });
+        } else if (ev === 'add_to_cart') {
+          const items = payload.ecommerce?.items || [];
+          window.fbq('track', 'AddToCart', {
+            content_type: 'product',
+            content_ids: items.map(i => String(i.item_id || i.id || '')),
+            value: Number(payload.ecommerce?.value || 0),
+            currency: String(payload.ecommerce?.currency || 'BDT')
+          });
+        } else if (ev === 'begin_checkout') {
+          const items = payload.ecommerce?.items || [];
+          window.fbq('track', 'InitiateCheckout', {
+            content_type: 'product',
+            content_ids: items.map(i => String(i.item_id || i.id || '')),
+            value: Number(payload.ecommerce?.value || 0),
+            currency: String(payload.ecommerce?.currency || 'BDT'),
+            num_items: items.length
+          });
+        } else if (ev === 'purchase') {
+          const items = payload.ecommerce?.items || [];
+          window.fbq('track', 'Purchase', {
+            content_type: 'product',
+            content_ids: items.map(i => String(i.item_id || i.id || '')),
+            value: Number(payload.ecommerce?.value || 0),
+            currency: String(payload.ecommerce?.currency || 'BDT'),
+            num_items: items.length
+          });
+        }
+      } catch (fbErr) {
+        // silent fail
+      }
+    }
+
     if (process.env.NODE_ENV === 'development') {
       console.log('[DataLayer Event]', payload.event, payload);
     }
