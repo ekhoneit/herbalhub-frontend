@@ -15,6 +15,7 @@ import toast from "react-hot-toast";
 import { useCart } from "@/hooks/useCart";
 import { useWishlist } from "@/hooks/useWishlist";
 import { useContact } from "@/lib/dataFetch";
+import { trackViewItem } from "@/utils/dataLayer";
 import {
   calculateVariantPrice,
   formatPrice,
@@ -34,6 +35,13 @@ export default function ProductDetailsClient({
   const { addToCart, setBuyNowItem } = useCart();
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
   const { contactData } = useContact();
+
+  // Track ViewContent / view_item on product details mount
+  useEffect(() => {
+    if (product?.id || product?._id) {
+      trackViewItem(product);
+    }
+  }, [product?.id]);
 
   const isVariantProduct = product?.productType === "variant";
   const initialDefaultVariant = isVariantProduct

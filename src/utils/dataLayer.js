@@ -30,7 +30,10 @@ export const pushToDataLayer = (payload, isEcommerce = false) => {
     window.dataLayer.push(payload);
 
     // Direct Meta Pixel (fbq) bridge to guarantee extension/browser tracking
-    if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+    if (typeof window !== 'undefined') {
+      window.fbq = window.fbq || function() {
+        (window.fbq.q = window.fbq.q || []).push(arguments);
+      };
       try {
         const ev = payload.event;
         if (ev === 'page_view') {
