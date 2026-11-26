@@ -36,8 +36,9 @@ export const pushToDataLayer = (payload, isEcommerce = false) => {
       };
       try {
         const ev = payload.event;
+        const testCodeOpt = { test_event_code: 'TEST17390' };
         if (ev === 'page_view') {
-          window.fbq('track', 'PageView');
+          window.fbq('track', 'PageView', {}, testCodeOpt);
         } else if (ev === 'view_item') {
           const item = payload.ecommerce?.items?.[0] || {};
           window.fbq('track', 'ViewContent', {
@@ -47,7 +48,7 @@ export const pushToDataLayer = (payload, isEcommerce = false) => {
             content_category: String(item.item_category || 'Health & Beauty'),
             value: Number(payload.ecommerce?.value || item.price || 0),
             currency: String(payload.ecommerce?.currency || 'BDT')
-          });
+          }, testCodeOpt);
         } else if (ev === 'add_to_cart') {
           const items = payload.ecommerce?.items || [];
           window.fbq('track', 'AddToCart', {
@@ -55,7 +56,7 @@ export const pushToDataLayer = (payload, isEcommerce = false) => {
             content_ids: items.map(i => String(i.item_id || i.id || '')),
             value: Number(payload.ecommerce?.value || 0),
             currency: String(payload.ecommerce?.currency || 'BDT')
-          });
+          }, testCodeOpt);
         } else if (ev === 'begin_checkout') {
           const items = payload.ecommerce?.items || [];
           window.fbq('track', 'InitiateCheckout', {
@@ -64,7 +65,7 @@ export const pushToDataLayer = (payload, isEcommerce = false) => {
             value: Number(payload.ecommerce?.value || 0),
             currency: String(payload.ecommerce?.currency || 'BDT'),
             num_items: items.length
-          });
+          }, testCodeOpt);
         } else if (ev === 'purchase') {
           const items = payload.ecommerce?.items || [];
           window.fbq('track', 'Purchase', {
@@ -73,7 +74,7 @@ export const pushToDataLayer = (payload, isEcommerce = false) => {
             value: Number(payload.ecommerce?.value || 0),
             currency: String(payload.ecommerce?.currency || 'BDT'),
             num_items: items.length
-          });
+          }, testCodeOpt);
         }
       } catch (fbErr) {
         // silent fail
