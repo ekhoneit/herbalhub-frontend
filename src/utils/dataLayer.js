@@ -53,7 +53,7 @@ export const pushToDataLayer = (payload, isEcommerce = false) => {
             content_type: 'product',
             content_ids: [String(item.item_id || item.id || '')],
             content_name: String(item.item_name || item.name || ''),
-            content_category: String(item.item_category || 'Health & Beauty'),
+            ...(item.item_category ? { content_category: String(item.item_category) } : {}),
             value: Number(payload.ecommerce?.value || item.price || 0),
             currency: String(payload.ecommerce?.currency || 'BDT')
           });

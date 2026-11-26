@@ -10,6 +10,25 @@ function PageTrackerContent() {
   const lastTrackedUrl = useRef(null);
 
   useEffect(() => {
+    const syncPixelTestCode = async () => {
+      try {
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+        const res = await fetch(`${apiUrl}/api/store-settings?t=${Date.now()}`, {
+          cache: 'no-store',
+        });
+        if (res.ok) {
+          const json = await res.json();
+          const code = json?.data?.pixelTestEventCode?.trim() || '';
+          if (typeof window !== 'undefined') {
+            window.__HERBALHUB_PIXEL_TEST_CODE__ = code;
+          }
+        }
+      } catch (_) {}
+    };
+    syncPixelTestCode();
+  }, []);
+
+  useEffect(() => {
     if (!pathname) return;
 
     const queryString = searchParams?.toString();
