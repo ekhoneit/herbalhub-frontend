@@ -140,6 +140,7 @@ export async function generateMetadata() {
 export default async function RootLayout({ children }) {
   let dynamicGtmId = GTM_ID;
   let dynamicPixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID || "";
+  let dynamicTestEventCode = "";
   try {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
     const res = await fetch(`${apiUrl}/api/store-settings`, {
@@ -152,6 +153,9 @@ export default async function RootLayout({ children }) {
       }
       if (data?.data?.pixelId?.trim()) {
         dynamicPixelId = data.data.pixelId.trim();
+      }
+      if (data?.data?.pixelTestEventCode?.trim()) {
+        dynamicTestEventCode = data.data.pixelTestEventCode.trim();
       }
     }
   } catch (_) {}
@@ -241,7 +245,8 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '${dynamicPixelId}');
-fbq('track', 'PageView', {}, { test_event_code: 'TEST17390' });`,
+window.__HERBALHUB_PIXEL_TEST_CODE__ = ${JSON.stringify(dynamicTestEventCode)};
+${dynamicTestEventCode ? `fbq('track', 'PageView', {}, { test_event_code: ${JSON.stringify(dynamicTestEventCode)} });` : `fbq('track', 'PageView');`}`,
               }}
             />
             <noscript>

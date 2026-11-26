@@ -36,45 +36,53 @@ export const pushToDataLayer = (payload, isEcommerce = false) => {
       };
       try {
         const ev = payload.event;
-        const testCodeOpt = { test_event_code: 'TEST17390' };
+        const dynamicTestCode = (typeof window !== 'undefined' && window.__HERBALHUB_PIXEL_TEST_CODE__) ? window.__HERBALHUB_PIXEL_TEST_CODE__ : '';
+        const testCodeOpt = dynamicTestCode ? { test_event_code: dynamicTestCode } : undefined;
+        const trackFbq = (eventName, params = {}) => {
+          if (testCodeOpt) {
+            window.fbq('track', eventName, params, testCodeOpt);
+          } else {
+            window.fbq('track', eventName, params);
+          }
+        };
         if (ev === 'page_view') {
-          window.fbq('track', 'PageView', {}, testCodeOpt);
+          trackFbq('PageView', {});
         } else if (ev === 'view_item') {
           const item = payload.ecommerce?.items?.[0] || {};
-          window.fbq('track', 'ViewContent', {
+          trackFbq('ViewContent', {
             content_type: 'product',
             content_ids: [String(item.item_id || item.id || '')],
             content_name: String(item.item_name || item.name || ''),
             content_category: String(item.item_category || 'Health & Beauty'),
             value: Number(payload.ecommerce?.value || item.price || 0),
             currency: String(payload.ecommerce?.currency || 'BDT')
-          }, testCodeOpt);
+          });
         } else if (ev === 'add_to_cart') {
           const items = payload.ecommerce?.items || [];
-          window.fbq('track', 'AddToCart', {
+          trackFbq('AddToCart', {
             content_type: 'product',
             content_ids: items.map(i => String(i.item_id || i.id || '')),
             value: Number(payload.ecommerce?.value || 0),
             currency: String(payload.ecommerce?.currency || 'BDT')
-          }, testCodeOpt);
+          });
         } else if (ev === 'begin_checkout') {
           const items = payload.ecommerce?.items || [];
-          window.fbq('track', 'InitiateCheckout', {
+          trackFbq('InitiateCheckout', {
             content_type: 'product',
             content_ids: items.map(i => String(i.item_id || i.id || '')),
             value: Number(payload.ecommerce?.value || 0),
             currency: String(payload.ecommerce?.currency || 'BDT'),
             num_items: items.length
-          }, testCodeOpt);
+          });
         } else if (ev === 'purchase') {
           const items = payload.ecommerce?.items || [];
-          window.fbq('track', 'Purchase', {
+          trackFbq('Purchase', {
             content_type: 'product',
             content_ids: items.map(i => String(i.item_id || i.id || '')),
             value: Number(payload.ecommerce?.value || 0),
             currency: String(payload.ecommerce?.currency || 'BDT'),
             num_items: items.length
-          }, testCodeOpt);
+          });
         }
       } catch (fbErr) {
         // silent fail
