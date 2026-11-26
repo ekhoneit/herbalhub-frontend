@@ -295,6 +295,16 @@ export const trackViewItem = (item, currency = DEFAULT_CURRENCY) => {
   const formattedItem = formatEcommerceItem(item, 1);
   if (!formattedItem) return;
 
+  const itemId = String(formattedItem.item_id || '');
+  const now = Date.now();
+  if (typeof window !== 'undefined') {
+    if (window._lastTrackedViewItemId === itemId && now - (window._lastTrackedViewItemTime || 0) < 1500) {
+      return;
+    }
+    window._lastTrackedViewItemId = itemId;
+    window._lastTrackedViewItemTime = now;
+  }
+
   const value = formattedItem.price || 0;
 
   pushToDataLayer(

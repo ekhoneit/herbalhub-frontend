@@ -35,10 +35,13 @@ export default function ProductDetailsClient({
   const { addToCart, setBuyNowItem } = useCart();
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
   const { contactData } = useContact();
+  const trackedViewItemRef = useRef(false);
 
-  // Track ViewContent / view_item on product details mount
+  // Track ViewContent / view_item on product details mount (single execution guarantee)
   useEffect(() => {
-    if (product?.id || product?._id) {
+    const currentId = product?.id || product?._id;
+    if (currentId && !trackedViewItemRef.current) {
+      trackedViewItemRef.current = true;
       trackViewItem(product);
     }
   }, [product?.id]);
